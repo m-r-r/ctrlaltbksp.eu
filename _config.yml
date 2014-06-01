@@ -1,0 +1,10 @@
+title: Ctrl + Alt + Backspace
+markdown: redcarpet
+
+# Site settings
+baseurl: ""
+url: "http://ctrlaltbksp.eu"
+
+# Build settings
+markdown: kramdown
+permalink: date

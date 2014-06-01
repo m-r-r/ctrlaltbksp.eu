@@ -1,0 +1,481 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+html, body, div, header, section, footer, nav {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+	font: 100.1%/150% "Fira Sans", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-size: 100%; line-height: 100%; }
+
+
+h1 { margin-bottom: 1em; }
+p { margin: 1em 0; }
+
+a, a:visited { color: #285577; }
+a:hover { color: #00a; }
+
+
+/* Fonts */
+
+
+/* --------------------------------------------------
+
+   Typographical base
+   
+   Tiny Typo v1.1 | MIT License
+   (c) 2010-2013 tinytypo.tetue.net
+
+----------------------------------------------------- */
+html {
+  font-size: 100.01%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/* Cf.: http://www.pompage.net/pompe/definir-des-tailles-de-polices-en-CSS/
+et http://forum.alsacreations.com/topic-4-54377-1.html
+[en] http://stackoverflow.com/questions/2703056/body-font-size-100-01-vs-body-font-size-100 */
+body {
+  font-size: 1em;
+  line-height: 1.5;
+}
+/* Titraille / Intertitres */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: 500;
+}
+h1,
+.h1 {
+  font-size: 2em;
+  line-height: 1.5;
+  margin-bottom: .75em;
+}
+h2,
+.h2 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+h3,
+.h3 {
+  font-size: 1.25em;
+  line-height: 1.2;
+  margin-bottom: 1.2em;
+}
+h4,
+.h4 {
+  font-size: 1.1em;
+  line-height: 1.364;
+  margin-bottom: 1.364em;
+}
+h5,
+.h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+h6,
+.h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small {
+  font-size: 60%;
+  line-height: 0;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  margin: 1.5em 0;
+  border: solid;
+  border-width: 1px 0 0;
+}
+/* Typographical enhancements */
+em, i {
+  font-style: italic;
+}
+strong, b {
+  font-weight: bold;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+abbr[title] {
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+@media print {
+  abbr[title] {
+    border-bottom: 0;
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+}
+dfn {
+  font-weight: bold;
+  font-style: italic;
+}
+s,
+del,
+.del {
+  opacity: .5;
+  text-decoration: line-through;
+}
+/* Lists */
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: square;
+}
+ul ul ul {
+  list-style-type: circle;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ol, ul {
+  margin-left: 1.5em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 1.5em;
+}
+
+:lang(en) > q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+
+/* [en] http://en.wikipedia.org/wiki/International_variation_in_quotation_marks */
+q:before { content: open-quote; }
+q:after  { content: close-quote; }
+
+blockquote {
+  position: relative;
+  padding-left: 1.5em;
+  border: solid rgba(34, 34, 34, 0.19999999999999996);
+  border-width: 0 0 0 .25em;
+}
+
+pre, code, kbd, samp, var, tt {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+samp { font-weight: bold; }
+address, cite, var {
+  font-style: italic;
+}
+
+/* End Tiny Typo */
+
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fira Sans'), local('FiraSans'), url(../fonts/FiraSans-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Fira Sans'), local('FiraSans'), url(../fonts/FiraSans-RegularItalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Fira Sans'), local('FiraSans'), url(../fonts/FiraSans-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Fira Sans'), local('FiraSans'), url(../fonts/FiraSans-MediumItalic.woff) format('woff');
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.posts {
+	list-style-type: none;
+	margin: 0 0 2em 0;
+  padding: 0;
+}
+
+.posts li {
+	line-height: 1.75em;
+}
+
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+#to-content, #to-menu {
+    display: none;
+}
+
+.inner {
+	max-width: 42em;
+  margin: 0 auto;
+  padding: 1.5em 1em;
+}
+
+
+#banner a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#banner h1 {
+  color: #a4a4a4;
+}
+
+#banner h1 a,
+#banner h1 a:hover {
+	color: #f3f3f3;
+}
+
+#banner nav a {
+	color: #f0f0f0;
+	margin-right: 1em;
+}
+
+#banner nav a.active {
+    color: #adadad;
+}
+
+#banner nav a:hover {
+  text-decoration: underline;
+}
+
+#menu {
+    display: inline-block;
+}
+
+#menu ul, #menu li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 30em) {
+  #banner {
+    font-size: 85%;
+  }
+}
+
+@media (min-width: 42em) {
+  #banner h1 {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1em;
+    vertical-align: middle;
+    margin-bottom: .25em;
+    margin-top: .25em;
+  }
+  #menu {
+    padding-left: 2em;
+    vertical-align: middle;
+  }
+}
+
+.meta {
+	color: #aaa;
+}
+
+#footer {
+	border-top: 4px solid #eee;
+	overflow: hidden;
+}
+
+#footer .widget {
+	font-size: 80%;
+	color: #555;
+	float: left;
+  width: 15em;
+  margin-right: 3em;
+}
+
+#footer .widget a {
+	color: #8085C1;
+}
+
+#footer #html5 img {
+  display: block;
+}
+
+#footer .copyright {
+  padding-top: 2em;
+	font-size: 80%;
+	color: #555;
+}
+
+#footer #rss img {
+	border: 0;
+}
+
+body {
+	border: thin solid #002902;
+	border-width: 1em 0 0 0;
+	background-color: #fcfcfc;
+}
+
+#banner {
+	background-color: #094303;
+}
+
+
+#footer .widget {
+    display: inline-block;
+}
+
+#footer p {
+    clear: both;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post pre {
+	border: 1px solid #ddd;
+	background-color: #eef;
+	padding: 0 .4em;
+}
+
+.post ul, .post ol {
+	margin-left: 1.35em;
+}
+
+.post code {
+	border: 1px solid #ddd;
+	background-color: #eef;
+	padding: 0 .2em;
+}
+
+.post pre code {
+	border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+	border: 1px solid #000;
+	background-color: #333;
+	color: #FFF;
+}
+
+.post pre.terminal code {
+	background-color: #333;
+}
+
+
+/*****************************************************************************/
+/*
+/* CV   
+/*
+/*****************************************************************************/
+
+#cv .adr {
+  float: right;
+}
+
+#cv .tel, #cv .email, #cv .url {
+  display: block;
+}
+
+#cv .keyval {
+  margin: 0;
+  padding: 0;
+}
+#cv .keyval dt {
+  font-weight: 500;
+  display: inline-block;
+  min-width: 5em;
+}
+
+#cv .keyval dd {
+  display: inline-block;
+}
+
+#cv .formations {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#cv .formations li {
+  margin-bottom: 1.5em;
+}
+
+#cv .formations li .date_duration { float: right; }
+
+#cv .skillset ul {
+  margin-left: .25em;
+}
+

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+			<article class="inner post" role="main" itemprop="blogPost" itempscope="itemscope" itemtype="http://schema.org/BlogPosting">
+				<header>
+					<h2 itemprop="name">{{ page.title }}</h2>
+					{% include metadata.html for=page %}
+				</header>
+        <div itemprop="articleBody">
+          {{ content }}
+        </div>
+			</article>
+

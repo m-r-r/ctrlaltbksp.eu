@@ -1,0 +1,12 @@
+---
+layout: page
+title: Accueil
+featured: 1
+---
+
+        <ul class="posts">
+          {% for post in site.posts|sort:'date' %}
+          <li itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+          <time itemprop="datePublished" datetime="{{post.date | date_to_xmlschema}}">{{ post.date | date:'%d/%m/%Y' }}</time> &raquo; <a itemprop="url name" href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>

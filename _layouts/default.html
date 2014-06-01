@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--[if lte IE 8]>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+    (function(t,i) { for(;i<t.length;i++)document.createElement(t[i]); })("article0aside0nav0section0footer0article".split(0), 0);
+    </script>
+    <![endif]-->
+    <title>{{ page.title }} &mdash; {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css?v={{ site.time | date:'%s' }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css?v={{ site.time | date:'%s' }}">
+
+  </head>
+  <body itemtype="http://schema.org/Blog" itemscope="itemscope">
+    <a id="to-content">Aller au contenu</a>
+    <a id="to-menu">Aller au menu</a>
+
+    <header id="banner">
+      <div class="inner">
+        <h1 class="title" itemprop="name"><a href="/" itemprop="url">{{ site.title }}</a></h1>
+        <nav id="menu">
+          <ul>
+            {% assign featured_pages = site.pages | sort:'featured','last' %}
+            {% for p in featured_pages %}
+            {% if p.featured %}
+            <li><a href="{{ p.url }}"{%if p.url == page.url%} class="active"{%endif%}>{{ p.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    {{ content }}
+
+    <footer id="footer">
+      <div class="inner">
+        <div id="hcard-Mickaël-Raybaud-Roig" class="vcard widget"
+          itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <p>
+          <strong class="fn" itemprop="name">Mickaël Raybaud-Roig</strong><br />
+          <a class="url" href="http://ctrlaltbksp.eu">http://ctrlaltbksp.eu</a><br />
+          <a class="email" itemprop="email"
+            href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">
+            &#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a><br />
+          <span class="tel" itemprop="telephone">&#48;&#54;&#32;&#54;&#57;&#32;&#51;&#48;&#32;&#49;&#54;&#32;&#52;&#57;</span>
+          </p>
+        </div>
+        <div id="html5" class="widget">
+        <p>
+          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fctrlaltbksp.eu%2F" title="Validation HTML5"><img src="/img/html5-valid.png" alt="Logo HTML5" /></a>
+          Ce site respecte les standards du Web
+        </p>
+        </div>
+        <p class="copyright">Copyright &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
+        {% include autoreload.html %}
+      </div>
+    </footer>
+  </body>
+</html>

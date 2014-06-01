@@ -1,0 +1,7 @@
+{% assign node = include.for %}
+
+<p class="meta">
+{% if node.date %}
+Publié le <time datetime="{{ node.date | date_to_xmlschema }}" pubdate>{{ node.date | date:'%d/%m/%Y à %H:%M' }}</time>.<br />
+{% endif %}
+</p>
