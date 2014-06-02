@@ -19,7 +19,7 @@ Voici quelques projets Open-Source auxquels j'ai participé:
 -   [GoAccess](https://github.com/allinurl/goaccess/) est un analyseur de logs pour Apache. 
     J'ai corrigé un bug qui faisait crasher le logiciel: [#92][goaccess-92]
 -   [Rust](http://rust-lang.org) est un langage de programmation créé par le fondation Mozilla.  
-    J'ai corrigé un petit que j'avais trouvé dans le module `std::io`, et qui faisait crasher le programme
+    J'ai corrigé un petit bug que j'avais trouvé dans le module `std::io`, et qui faisait crasher le programme
     lorsqu'une valeur invalide était passée à une fonction: [#13799][rust-13799].
 -   [Wallabag](http://wallabag.org) est une application de lecture différée.  
     J'ai mis à jour la version française: [#680][wallabag-680].

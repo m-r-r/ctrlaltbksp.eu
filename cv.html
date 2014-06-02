@@ -4,9 +4,9 @@ title: CV
 featured: 2
 ---
 
-<div class="hResume" id="cv" role="main">
-<!-- Contact --->
-  <section class="contact vcard inner">
+<div class="hResume" id="content" role="main">
+<!-- Contact -->
+  <section class="contact vcard inner" id="cv-contact">
     <h2 class="fn n">
         <span class="given-name">Mickaël</span>
         <span class="family-name">Raybaud-Roig</span>
@@ -19,25 +19,25 @@ featured: 2
       <span class="country-name">France</span>
     </div>
 
-    <dl class="tel keyval">
+    <dl class="tel">
       <dt class="type" title="mobile">Tél:</dt>
       <dd class="value">&#48;&#54;&#32;&#54;&#57;&#32;&#51;&#48;&#32;&#49;&#54;&#32;&#52;&#57;</dd>
     </dl>
-    <dl class="email keyval">
+    <dl class="email">
       <dt class="type" title="email">Email:</dt>
       <dd><a class="value" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></dd>
     </dl>
-    <dl class="url keyval">
+    <dl class="url">
       <dt class="type" title="url">Site Web:</dt>
-      <dd><a class="url" href="http://ctrlaltbksp.eu">http://ctrlaltbksp.eu</a></dd>
+      <dd><a class="value" href="http://ctrlaltbksp.eu">http://ctrlaltbksp.eu</a></dd>
     </dl>
   </section>
 
   <!-- Formation -->
-  <section class="inner">
+  <section class="inner" id="cv-formation">
     <h3>Formation</h3>
 
-    <ol class="formations">
+    <ol class="vcalendar">
       <li class="education vevent vcard">
       <div class="date_duration">
         <time class="dtstart" datetime="2013">2013</time> - <time class="dtend" title="2014">2014</time>
@@ -53,7 +53,7 @@ featured: 2
   <section class="inner">
     <h3>Diplômes</h3>
 
-    <ol class="formations">
+    <ol class="vcalendar">
       <li class="education vevent vcard">
       <div class="date_duration">
         <time class="dtstart" datetime="2011">2011</time> - <time class="dtend" title="2013">2013</time>
@@ -76,12 +76,32 @@ featured: 2
     </ol>
   </section>
 
-<!-- Compétences -->
+<!-- Expériences -->
+  <section class="inner">
+    <h3>Expériences profesionnelles</h3>
+    <ol class="vcalendar">
+      {% for e in site.data.cv.experiences %}
+      <li class="experience vevent">
+        <div class="date_duration">
+          Du <time class="dtstart" datatime="{{ e.dtstart }}">{{ e.dtstart | fromat:'%d/%m/%Y' }}</time>
+          au <time class="dtend" datatime="{{ e.dtend }}">{{ e.dtend | fromat:'%d/%m/%Y' }}</time>
+        </div>
+        <div class="location">{{ e.location }}</div>
+        <div class="summary">{{ e.title }}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <!-- Compétences -->
   <section class="skill-list inner">
-    <h3>Compétences</h2>
+    <h3>Compétences</h3>
+
     <div class="skillset">
       <h4>Langages de Programmation</h4>
-      <p>Pendant mes études, j'ai appris les langages de programation ci-dessous:</p>
+      <p>
+        Pendant mes études, j'ai appris les langages de programation ci-dessous:
+      </p>
       <ul>
         <li><a href="http://php.net">PHP</a> &mdash; J'ai déjà réalisé un site Web à l'aide de ce langage.</li>
         <li><a href="http://www.oracle.com/technetwork/java/index.html">Java</a> &mdash; Je connais la plateforme Android,
@@ -93,7 +113,10 @@ featured: 2
         <li><a href="https://fr.wikipedia.org/wiki/The_C++_Programming_Language">Langage C++</a> &mdash; Réalisation d'un Jeu de la Vie, et
             d'une interface graphique en Qt5</li>
       </ul>
-      <p>J'ai aussi eu l'occasion d'apprendre les langages suivants:</p>
+
+      <p>
+        J'ai aussi eu l'occasion d'apprendre les langages suivants:
+      </p>
       <ul>
         <li><a href="http://python.org">Python</a> &mdash; C'est le premier langage que j'ai appris,
             j'ai une très bonne connaissance des versions 2.6 à 3.2</li>
@@ -111,7 +134,7 @@ featured: 2
         <li>Bonne connaissance du <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>.</li>
         <li>Maîtrise du langage <a href="https://fr.wikipedia.org/wiki/SQL">SQL</a>.</li>
         <li>Utilisation du framework Web <a href="http://flask.pocoo.org/">Flask</a>.</li>
-      </li>
+      </ul>
     </div>
     
     <div class="skillset">
@@ -130,7 +153,7 @@ featured: 2
       <ul>
         <li>Bon niveau en Anglais (Score au TOEIC: <var>740</var>)</li>
         <li>Niveau débutant en Espéranto</li>
-      </li>
+      </ul>
     </div>
   </section>
 </div>

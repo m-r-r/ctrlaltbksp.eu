@@ -5,17 +5,17 @@
 /*****************************************************************************/
 
 /* Global Reset */
-html, body, div, header, section, footer, nav {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border-width: 0;
+html, body, div, header, article, section, footer, nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
 }
 
 html, body { height: 100%; }
 
 body {
-	font: 100.1%/150% "Fira Sans", Helvetica, Arial, sans-serif;
+  font: 100.1%/150% "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,10 +34,10 @@ a:hover { color: #00a; }
 
 /* --------------------------------------------------
 
-   Typographical base
-   
-   Tiny Typo v1.1 | MIT License
-   (c) 2010-2013 tinytypo.tetue.net
+Typographical base
+
+Tiny Typo v1.1 | MIT License
+(c) 2010-2013 tinytypo.tetue.net
 
 ----------------------------------------------------- */
 html {
@@ -178,6 +178,7 @@ ul ul, ol ol, ul ol, ol ul {
 }
 ol, ul {
   margin-left: 1.5em;
+  padding-left: 0;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
@@ -256,13 +257,13 @@ address, cite, var {
 /*
 /*****************************************************************************/
 .posts {
-	list-style-type: none;
-	margin: 0 0 2em 0;
+  list-style-type: none;
+  margin: 0 0 2em 0;
   padding: 0;
 }
 
 .posts li {
-	line-height: 1.75em;
+  line-height: 1.75em;
 }
 
 
@@ -273,19 +274,19 @@ address, cite, var {
 /*****************************************************************************/
 
 #to-content, #to-menu {
-    display: none;
+  display: none;
 }
 
 .inner {
-	max-width: 42em;
+  max-width: 42em;
   margin: 0 auto;
   padding: 1.5em 1em;
 }
 
 
 #banner a {
-	font-weight: bold;
-	text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #banner h1 {
@@ -294,16 +295,16 @@ address, cite, var {
 
 #banner h1 a,
 #banner h1 a:hover {
-	color: #f3f3f3;
+  color: #f3f3f3;
 }
 
 #banner nav a {
-	color: #f0f0f0;
-	margin-right: 1em;
+  color: #f0f0f0;
+  margin-right: 1em;
 }
 
 #banner nav a.active {
-    color: #adadad;
+  color: #adadad;
 }
 
 #banner nav a:hover {
@@ -311,14 +312,14 @@ address, cite, var {
 }
 
 #menu {
-    display: inline-block;
+  display: inline-block;
 }
 
 #menu ul, #menu li {
-    display: inline;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 30em) {
@@ -343,24 +344,24 @@ address, cite, var {
 }
 
 .meta {
-	color: #aaa;
+  color: #aaa;
 }
 
 #footer {
-	border-top: 4px solid #eee;
-	overflow: hidden;
+  border-top: 4px solid #eee;
+  overflow: hidden;
 }
 
 #footer .widget {
-	font-size: 80%;
-	color: #555;
-	float: left;
+  font-size: 80%;
+  color: #555;
+  float: left;
   width: 15em;
   margin-right: 3em;
 }
 
 #footer .widget a {
-	color: #8085C1;
+  color: #8085C1;
 }
 
 #footer #html5 img {
@@ -369,31 +370,31 @@ address, cite, var {
 
 #footer .copyright {
   padding-top: 2em;
-	font-size: 80%;
-	color: #555;
+  font-size: 80%;
+  color: #555;
 }
 
 #footer #rss img {
-	border: 0;
+  border: 0;
 }
 
 body {
-	border: thin solid #002902;
-	border-width: 1em 0 0 0;
-	background-color: #fcfcfc;
+  border: thin solid #002902;
+  border-width: 1em 0 0 0;
+  background-color: #fcfcfc;
 }
 
 #banner {
-	background-color: #094303;
+  background-color: #094303;
 }
 
 
 #footer .widget {
-    display: inline-block;
+  display: inline-block;
 }
 
 #footer p {
-    clear: both;
+  clear: both;
 }
 
 /*****************************************************************************/
@@ -404,34 +405,34 @@ body {
 
 /* standard */
 .post pre {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .4em;
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
 }
 
 .post ul, .post ol {
-	margin-left: 1.35em;
+  margin-left: 1.35em;
 }
 
 .post code {
-	border: 1px solid #ddd;
-	background-color: #eef;
-	padding: 0 .2em;
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
 }
 
 .post pre code {
-	border: none;
+  border: none;
 }
 
 /* terminal */
 .post pre.terminal {
-	border: 1px solid #000;
-	background-color: #333;
-	color: #FFF;
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
 }
 
 .post pre.terminal code {
-	background-color: #333;
+  background-color: #333;
 }
 
 
@@ -441,41 +442,41 @@ body {
 /*
 /*****************************************************************************/
 
-#cv .adr {
+#cv-contact .adr {
   float: right;
 }
-
-#cv .tel, #cv .email, #cv .url {
-  display: block;
+@media (max-width: 35em) {
+  #cv-contact .adr { float: none; margin-bottom: 1.5em; }  
 }
 
-#cv .keyval {
+#cv-contact dt {
+  font-weight: 500;
+}
+
+#cv-contact dl {
   margin: 0;
   padding: 0;
 }
-#cv .keyval dt {
-  font-weight: 500;
-  display: inline-block;
-  min-width: 5em;
+#cv-contact dt,
+#cv-contact dd {
+  display: inline;
 }
 
-#cv .keyval dd {
-  display: inline-block;
+@media (min-width: 25em) {
+  #cv-contact dt {
+    display: inline-block;
+    min-width: 5em;
+  }
 }
 
-#cv .formations {
+.vcalendar {
   margin-left: 0;
   padding-left: 0;
   list-style-type: none;
 }
 
-#cv .formations li {
-  margin-bottom: 1.5em;
+.vcalendar .vevent {
+  margin: .5em 0;
 }
 
-#cv .formations li .date_duration { float: right; }
-
-#cv .skillset ul {
-  margin-left: .25em;
-}
-
+.vcalendar .vevent .date_duration { float: right; }
