@@ -251,6 +251,23 @@ address, cite, var {
   src: local('Fira Sans'), local('FiraSans'), url(../fonts/FiraSans-MediumItalic.woff) format('woff');
 }
 
+
+/* Tables */
+
+table {
+    border: none;
+    border-collapse: collapse;
+}
+
+table tr:nth-child(2n) {
+    background-color: #fbfbfb;
+}
+
+table tr:nth-child(2n+1) {
+    background-color: #f9f9f9;
+}
+
+/*****************************************************************************/
 /*****************************************************************************/
 /*
 /* Home
@@ -469,14 +486,12 @@ body {
   }
 }
 
-.vcalendar {
-  margin-left: 0;
-  padding-left: 0;
-  list-style-type: none;
+table.vcalendar {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.vcalendar .vevent {
-  margin: .5em 0;
+table.vcalendar td.date_duration {
+  text-align: right;
+  vertical-align: top;
 }
-
-.vcalendar .vevent .date_duration { float: right; }

@@ -1,3 +1,21 @@
+formation:
+    - dtstart: 2013
+      dtend: 2014
+      location: IUT Nice
+      title: License Professionnelle A.I.I.
+
+
+diplomes:
+    - dtstart: 2011
+      dtend: 2013
+      location: Lycée Professionnel Les Eucalyptus (Nice)
+      title: B.T.S. Électrotechnique
+    - dtstart: 2008
+      dtend: 2011
+      location: Lycée Professionnel Les Eucalyptus (Nice)
+      title: Baccalauréat Professionnel Électrotechnique
+
+
 experiences:
     - dtstart:  2013-09-02
       dtend: 2014-09-02
@@ -13,7 +31,7 @@ experiences:
       title: Technicien supérieur en électrotechnique
     - dtstart:  2011-03-15
       dtend: 2011-04-09
-      location: S.A.S. « <abbr title="Société Électro-Thermique">S.E.T.</title> »
+      location: S.A.S. « <abbr title="Société Électro-Thermique">S.E.T.</abbr> »
       title: Électricien
     - dtstart:  2010-11-22
       dtend: 2010-12-18
@@ -21,11 +39,11 @@ experiences:
       title: Électricien
     - dtstart:  2010-05-03
       dtend: 2010-05-30
-      location: S.A.R.L . « <abbr title="Électricité Grassoise de l'Industrie et du Bâtiment">E.G.I.B.</title> »
+      location: S.A.R.L . « <abbr title="Électricité Grassoise de l'Industrie et du Bâtiment">E.G.I.B.</abbr> »
       title: Électricien
     - dtstart:  2009-09-28
       dtend: 2009-10-23
-      location: S.A.R.L . « <abbr title="Électricité Grassoise de l'Industrie et du Bâtiment">E.G.I.B.</title> »
+      location: S.A.R.L . « <abbr title="Électricité Grassoise de l'Industrie et du Bâtiment">E.G.I.B.</abbr> »
       title: Électricien
     - dtstart:  2009-06-02
       dtend: 2009-07-02
