@@ -19,8 +19,10 @@
     <link rel="stylesheet" type="text/css" media="print" href="{{ site.baseurl }}/css/print.css?v={{ site.time | date:'%s' }}" />
   </head>
   <body itemtype="http://schema.org/Blog" itemscope="itemscope">
-    <a id="to-content" href="#content">Aller au contenu</a>
-    <a id="to-menu" href="#menu">Aller au menu</a>
+    <div id="skip-links">
+      <a href="#content">Aller au contenu</a>
+      <a href="#menu">Aller au menu</a>
+    </div>
 
     <header id="banner">
       <div class="inner">
@@ -55,7 +57,8 @@
         </div>
         <div id="html5" class="widget">
         <p>
-          <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fctrlaltbksp.eu%2F" title="Validation HTML5"><img src="/img/html5-valid.png" alt="Logo HTML5" /></a>
+        <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
+           title="Validation HTML5"><img src="/img/html5-valid.png" alt="Logo HTML5" /></a>
           Ce site respecte les standards du Web
         </p>
         </div>

@@ -27,7 +27,7 @@ function check() {
       } else if (found_etag !== current_etag) {
         document.location.search =
           '?etag=' + encodeURIComponent(found_etag) +
-          '&scrolly=' + window.scrollY;
+          '&scrolly=' + (window.scrollY || window.pageYOffset);
         return;
       }
       setTimeout(check, 500);

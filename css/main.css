@@ -25,8 +25,15 @@ font-size: 100%; line-height: 100%; }
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a, a:visited { color: #285577; }
-a:hover { color: #00a; }
+a { text-decoration: none }
+a, a:visited {
+    color: #285577;
+    transition: color ease-in-out 350ms;
+}
+a:hover {
+    color: #25a;
+    text-decoration: underline;
+}
 
 
 /* Fonts */
@@ -289,8 +296,24 @@ table tr:nth-child(2n+1) {
 /*
 /*****************************************************************************/
 
-#to-content, #to-menu {
-  display: none;
+#skip-links {
+  background-color: #002902;
+  font-size: .75em;
+  line-height: 1.15em;
+}
+
+#skip-links a {
+    margin-left: 1em;
+    color: transparent;
+}
+
+#skip-links:hover a {
+    color: #888;
+}
+
+#skip-links a:hover,
+#skip-links a:focus {
+    color: #afafaf;
 }
 
 .inner {
@@ -301,6 +324,7 @@ table tr:nth-child(2n+1) {
 
 .ie6 .inner {
     width: 42em;
+    width: expression(this.parentNode.offsetWidth < (42 * this.fontSize) ? "42em" : "auto");
 }
 
 #banner a {
@@ -317,19 +341,6 @@ table tr:nth-child(2n+1) {
   color: #f3f3f3;
 }
 
-#banner nav a {
-  color: #f0f0f0;
-  margin-right: 1em;
-}
-
-#banner nav a.active {
-  color: #adadad;
-}
-
-#banner nav a:hover {
-  text-decoration: underline;
-}
-
 #menu {
   display: inline-block;
 }
@@ -340,6 +351,20 @@ table tr:nth-child(2n+1) {
   margin: 0;
   padding: 0;
 }
+
+#menu a {
+  color: #f0f0f0;
+  margin-right: 1em;
+}
+
+#menu a.active {
+  color: #adadad;
+}
+
+#menu nav a:hover {
+  text-decoration: underline;
+}
+
 
 @media (max-width: 30em) {
   #banner {
@@ -398,8 +423,6 @@ table tr:nth-child(2n+1) {
 }
 
 body {
-  border: thin solid #002902;
-  border-width: 1em 0 0 0;
   background-color: #fcfcfc;
 }
 
