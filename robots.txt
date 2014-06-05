@@ -1,7 +1,14 @@
+---
+layout: nil
+---
 User-agent: *
 Disallow:
-Disallow: /css
-Disallow: /fonts
-Disallow: /img
-Disallow: /cv.html
-Disallow: /code.html
+
+{% for post in site.posts %}{% if post.allow_robots == false %}
+Disallow: {{ post.url }}{% endif %}{% endfor %}
+{% for html_page in site.html_pages %}{% if html_page.allow_robots == false %}
+Disallow: {{ html_page.url }}{% endif %}{% endfor %}
+{% for file in site.static_files %}
+Disallow: {{ file.path }}{% endfor %}
+
+Sitemap: {{ site.url }}/sitemap.xml
