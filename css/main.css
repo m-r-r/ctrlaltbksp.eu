@@ -352,18 +352,18 @@ table tr:nth-child(2n+1) {
 }
 
 #menu a {
-  color: #f0f0f0;
+  color: #adadad;
   margin-right: 1em;
 }
 
+#menu a:hover,
+#menu a:focus {
+  color: #dfdfdf;
+}
+
 #menu a.active {
-  color: #adadad;
+  color: #cacaca;
 }
-
-#menu nav a:hover {
-  text-decoration: underline;
-}
-
 
 @media (max-width: 30em) {
   #banner {
@@ -437,6 +437,7 @@ body {
 #footer p {
   clear: both;
 }
+
 
 /*****************************************************************************/
 /*
