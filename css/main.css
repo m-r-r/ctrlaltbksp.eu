@@ -323,8 +323,7 @@ table tr:nth-child(2n+1) {
 }
 
 .ie6 .inner {
-    width: 42em;
-    width: expression(this.parentNode.offsetWidth < (42 * this.fontSize) ? "42em" : "auto");
+  width: expression((this.offsetWidth > (550)) ? ("550px") : "auto");
 }
 
 #banner a {
