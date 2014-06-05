@@ -1,2 +1,7 @@
-User-Agent: *
-Disallow: /
+User-agent: *
+Disallow:
+Disallow: /css
+Disallow: /fonts
+Disallow: /img
+Disallow: /cv.html
+Disallow: /code.html
