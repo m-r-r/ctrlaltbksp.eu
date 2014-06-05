@@ -366,8 +366,21 @@ table tr:nth-child(2n+1) {
 }
 
 @media (max-width: 30em) {
-  #banner {
-    font-size: 85%;
+  #banner h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  #menu {
+    display: block;
+    text-align: center;
+  }
+  #skip-links {
+    text-align: center;
+    font-size: 80%;
+  }
+  #skip-links a {
+    color: #888;
+    font-size: 1em;
   }
 }
 
