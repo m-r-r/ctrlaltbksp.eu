@@ -5,6 +5,14 @@ markdown: redcarpet
 baseurl: ""
 url: "http://ctrlaltbksp.eu"
 
+# Language settings
+lang: fr
+timezone: Europe/Paris
+
 # Build settings
 markdown: kramdown
 permalink: date
+sass:
+    style: :compressed
+    sass_dir: css
+    cache_location: /tmp/sass

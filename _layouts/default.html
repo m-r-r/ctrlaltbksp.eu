@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 6]><html class="ie6"><![endif]-->
+<!--[if IE 6]><html lang="{{ page.lang | default:site.lang }} class="ie6"><![endif]-->
 <!--[if !IE]><!-->
-<html>
+<html lang="{{ page.lang | default:site.lang }}">
 <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
@@ -12,27 +12,25 @@
     </script>
     <![endif]-->
     <title>{{ page.title }} &mdash; {{ site.title }}</title>
+    {% if page.allow_robots == false %}<meta name="robots" content="noindex,nofollow" />{% endif %}
     <meta name="viewport" content="width=device-width" />
-
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/main.css" />
   </head>
   <body itemtype="http://schema.org/Blog" itemscope="itemscope">
     <div id="skip-links">
-      <a href="#content">Aller au contenu</a>
-      <a href="#menu">Aller au menu</a>
+      <a href="#content">{% t Aller au contenu %}</a>
+      <a href="#menu">{% t Aller au menu %}</a>
     </div>
 
     <header id="banner">
       <div class="inner">
-        <h1 class="title" itemprop="name"><a href="{{ site.baseurl }}/" itemprop="url">{{ site.title }}</a></h1>
+        <h1 class="title" itemprop="name"><a itemprop="url" href="{{ site.baseurl }}/{% if page.lang != site.lang %}index.{{ page.lang }}.html{%endif %}">{{ site.title }}</a></h1>
         <nav id="menu">
           <ul>
-            {% assign featured_pages = site.pages | sort:'featured','last' %}
-            {% for p in featured_pages %}
-            {% if p.featured %}
+            {% assign pages = site.pages | where:'lang',page.lang |sort:'featured','last' %}
+            {% for p in pages %}{% if p.featured %}
             <li><a href="{{ site.baseurl }}{{ p.url }}"{%if p.url == page.url%} class="active"{%endif%}>{{ p.title }}</a></li>
-            {% endif %}
-            {% endfor %}
+            {% endif %}{% endfor %}
           </ul>
         </nav>
       </div>
@@ -56,8 +54,8 @@
         <div id="html5" class="widget">
         <p>
         <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
-           title="Validation HTML5"><img src="/img/html5-valid.png" alt="Logo HTML5" /></a>
-          Ce site respecte les standards du Web
+          title="{% t Validation HTML5 %}"><img src="/img/html5-valid.png" alt="{% t Logo HTML5 %}" /></a>
+         {% t Ce site respecte les standards du Web. %}
         </p>
         </div>
         <p class="copyright">Copyright &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
@@ -65,6 +63,4 @@
       </div>
     </footer>
   </body>
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/syntax.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="{{ site.baseurl }}/css/print.css" />
 </html>
