@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Code
+lang: fr
 featured: 3
 allow_robots: false
 sitemap: false

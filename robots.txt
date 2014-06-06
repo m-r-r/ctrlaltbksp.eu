@@ -4,9 +4,9 @@ layout: nil
 User-agent: *
 Disallow:
 
-{% for post in site.posts %}{% if post.allow_robots == false %}
+{% for post in site.posts %}{% if post.allow_robots == false or post.published == false %}
 Disallow: {{ post.url }}{% endif %}{% endfor %}
-{% for html_page in site.html_pages %}{% if html_page.allow_robots == false %}
+{% for html_page in site.html_pages %}{% if html_page.allow_robots == false  or post.published == false %}
 Disallow: {{ html_page.url }}{% endif %}{% endfor %}
 {% for file in site.static_files %}
 Disallow: {{ file.path }}{% endfor %}
