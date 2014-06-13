@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 6]><html lang="{{ page.lang | default:site.lang }} class="ie6"><![endif]-->
-<!--[if !IE]><!-->
 <html lang="{{ page.lang | default:site.lang }}">
-<!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <!--[if lte IE 8]>
@@ -15,8 +12,14 @@
     {% if page.allow_robots == false %}<meta name="robots" content="noindex,nofollow" />{% endif %}
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/main.css" />
+    <link rel="alternate" type="application/xml+atom" title="{% t Flux ATOM %}" href="{{ site.baseurl }}/{% if page.lang != site.lang %}feed.{{ page.lang }}.xml{%endif %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
+    <link rel="shortcut icon" type="image/png"    href="{{ site.baseurl }}/favicon.png" />
   </head>
+<!--[if IE 6]><body class="{{ page.lang | default:site.lang }} class="ie6"><![endif]-->
+<!--[if !IE 6]><!-->
   <body itemtype="http://schema.org/Blog" itemscope="itemscope">
+<!--<![endif]-->
     <div id="skip-links">
       <a href="#content">{% t Aller au contenu %}</a>
       <a href="#menu">{% t Aller au menu %}</a>
@@ -58,7 +61,7 @@
          {% t Ce site respecte les standards du Web. %}
         </p>
         </div>
-        <p class="copyright">Copyright &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
+        <p class="copyright">{% t Copyright %} &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
         {% include autoreload.html %}
       </div>
     </footer>

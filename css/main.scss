@@ -30,7 +30,7 @@ a, a:visited {
     transition: color ease-in-out 350ms;
     
     &:hover {
-        color: #25b;
+        color: #0078b9;
         text-decoration: underline;
     }
 }
@@ -312,28 +312,23 @@ body {
     font-size: .75em;
     line-height: 1.15em;
 
-    &:hover a {
-        color: #888;
-    }
-
     a {
-        margin-left: 1em;
+        margin: 0 .5em;
         color: transparent;
+        color: #666;
 
         @media (max-width: 30em) {
             color: #888;
             font-size: 1em;
         }
 
-        &:hover,
-        &:focus {
+        &:hover, &:focus {
             color: #afafaf;
         }
     }
 
     @media (max-width: 30em) {
-        text-align: center;
-        font-size: 80%;
+      display: none;
     }
 }
 
@@ -398,7 +393,7 @@ body {
         }
 
         &.active {
-            color: #cacaca;
+          color: #afafaf;
         }
     }
 
@@ -406,6 +401,7 @@ body {
     @media (max-width: 30em) {
         display: block;
         text-align: center;
+        margin: 0 .5em;
     }
 
     @media (min-width: 42em) {
@@ -439,13 +435,6 @@ body {
         padding-top: 2em;
         font-size: 80%;
         color: #555;
-    }
-
-    #rss img {
-        border: 0;
-    }
-
-    p {
         clear: both;
     }
 }
