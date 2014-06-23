@@ -1,14 +1,14 @@
 ---
 # vim: set lbr tw=80 spell spelllang=fr:
 layout: post
-title:  "Installer le certificat TSL de CA-Cert.org sous ArchLinux"
+title:  "Installer le certificat TLS de CAcert.org sous ArchLinux"
 date: 2014-06-21 17:25:51 +0200
 lang: fr
 tags:
     - GNU/Linux
     - ArchLinux
     - TLS
-    - CA-Cert.org
+    - CAcert.org
 published: true
 ---
 
@@ -28,17 +28,17 @@ Le plus bizzare était que l'erreur survenait sur certains sites
 d'autres...
 
 Au bout d'un moment, j'ai finis par comprendre: les certificats de
-ces sites étaient tous signés par [CA-Cert.org][ca-cert], et le certificat
-racine de CA-Cert n'était pas installé sur ma machine.
+ces sites étaient tous signés par [CAcert.org][ca-cert], et le certificat
+racine de CAcert n'était pas installé sur ma machine.
 
 Pour rappel, les sites utilisant HTTPS possèdent un certificat [TLS][wiki-tls]
 qui a normalement été délivré par une autoritée de certification. Cette autorité
-de certification (dans le cas présent CA-Cert.org) possède elle aussi un
+de certification (dans le cas présent CAcert.org) possède elle aussi un
 certificat, qui doit être installé sur la machine cliente.
 
 Généralement, les certificats TLS des autorités de certification les plus
 courantes sont installés avec le système d'exploitation.  
-Ce n'est malheureusement pas toujours le cas de CA-Cert.org, qui est une
+Ce n'est malheureusement pas toujours le cas de CAcert.org, qui est une
 autorité de certification indépendante assez peu utilisée.  
 
 Sur [ArchLinux][arch] (le système d'exploitation que j'utilise), il faut donc
