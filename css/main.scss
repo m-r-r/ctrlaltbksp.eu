@@ -209,6 +209,9 @@ dd {
 :lang(fr) > q {
   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
 }
+:lang(eo) > q {
+  quotes: "\201C" "\201D" "\201E" "\201C" "\2018" "\2019";
+}
 
 /* [en] http://en.wikipedia.org/wiki/International_variation_in_quotation_marks */
 q:before { content: open-quote; }
@@ -307,15 +310,24 @@ body {
     background-color: #fcfcfc;
 }
 
+.inner {
+    max-width: 42em;
+    margin: 0 auto;
+    padding: 1.5em 1em;
+}
+
 #skip-links {
+    position: absolute;
+    width: 100%;
     background-color: #002902;
     font-size: .75em;
-    line-height: 1.15em;
+    line-height: 1.15;
 
     a {
-        margin: 0 .5em;
+        padding: .1em .5em 0 .5em;
         color: transparent;
         color: #666;
+        vertical-align: center;
 
         @media (max-width: 30em) {
             color: #888;
@@ -325,25 +337,18 @@ body {
         &:hover, &:focus {
             color: #afafaf;
         }
+
+        &:last-child {
+            float: right;
+        }
     }
-
-    @media (max-width: 30em) {
-      display: none;
-    }
-}
-
-.inner {
-    max-width: 42em;
-    margin: 0 auto;
-    padding: 1.5em 1em;
-}
-
-.ie6 .inner {
-    width: expression((this.offsetWidth > (550)) ? ("550px") : "auto");
 }
 
 #banner {
+    padding-top: .75em;
     background-color: #094303;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAGUlEQVQImWNgYGBgYGVlNWaAARgHRRBZEgAZawEJdtbz3QAAAABJRU5ErkJggg==),
+        linear-gradient(to bottom, #094303 0%, #095303 50%, #094303 100%);
 
     a {
         font-weight: bold;
@@ -371,6 +376,11 @@ body {
             margin-top: .25em;
         }
     }
+}
+
+@media (max-width: 30em) {
+    #skip-links { display: none  }
+    #banner     { padding-top: 0 }
 }
 
 #menu {
@@ -405,7 +415,43 @@ body {
     }
 
     @media (min-width: 42em) {
+        display: inline-block;
         padding-left: 2em;
+        vertical-align: middle;
+    }
+}
+
+#translations {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin: 0 .5em;
+
+        li {
+            display: inline-block;
+            opacity: .65;
+            transition: opacity ease-in-out 350ms;
+
+            &:hover, &:focus {
+                opacity: 1;
+            }
+
+            &, a, img {
+                width: 3em; 
+                height: 2em; /* width × 0.67 */ 
+                margin-bottom: 0;
+                padding: 0;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    display: none;
+
+    @media (min-width: 42em) {
+        float: right;
+        display: inline-block;
         vertical-align: middle;
     }
 }

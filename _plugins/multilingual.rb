@@ -1,16 +1,19 @@
 module Jekyll
+
   class MultilingualPages < Generator
     safe :true
     priority :highest
 
     def generate(site)
+      @site = site
       @default_language = site.config["lang"] || "en"
-      @url_style = site.config['i18n_url_style'].intern rescue :ext
-
       new_files = []
+
       site.each_site_file do |file|
-        if file.respond_to? :data and file.data.key? 'languages'
+        if (file.is_a? Page or file.is_a? Post or file.is_a? Document) \
+            and file.data.key? 'languages'
           languages = file.data['languages']
+          alternates = []
 
           if languages.is_a? Array
             languages = Proc.new do |hash|
@@ -21,12 +24,22 @@ module Jekyll
 
           languages.each_pair do |lang, localized_data|
             if lang =~ /^[a-z]{2}$/i
-              new_file = new_file(site, file)
+              new_file = new_file(site, file, /#{@default_language}/i !~ lang ? lang : nil)
               new_file.data.delete 'languages'
               new_file.data.update localized_data if localized_data.is_a? Hash
               new_file.data['lang'] = lang
-              new_files << patch_url(new_file, lang)
+              new_file.data['permalink'] = make_permalink(file, lang)
+
+              new_files << new_file
+              alternates << new_file
             end
+          end
+
+          alternates.each do |alt|
+            alts = {}
+            alternates.each {|a| alts[a.data['lang']] = a}
+            alts.delete alt.data['lang']
+            alt.data['translations'] = alts
           end
         end
       end
@@ -49,33 +62,21 @@ module Jekyll
       end
     end
 
-    def patch_url(file, lang)
-      return file if lang == @default_language
-      oldurl = file.url
-
-      if @url_style == :ext
-        if oldurl[/\.html$/].nil?
-            newurl = File.join(oldurl, "index.#{lang}.html")
-        else
-            newurl = oldurl[0,oldurl.length-5] + ".#{lang}.html"
-        end
-      else
-        newurl = File.join(lang, oldurl)
-      end
-
-      file.instance_variable_set(:@_url, newurl)
-      file.instance_variable_set(:@url, newurl)
-      puts "#{file.inspect} #{file.dest}"
-      file
+    def make_permalink(file, lang)
+      url = file.url('') rescue file.url
+      if /#{@default_language}/i !~ lang
+        url.sub(/(\.\w+)?$/i, ".#{lang}\\0")
+      else 
+        url
+      end.sub(/^#{@site.baseurl}?\/?/i, '/')
     end
 
-    def new_file(site, orig)
-      if orig.is_a? Page or orig.is_a? Draft or orig.is_a? Post
-        return orig.class.new(site, site.source, orig.dir, orig.name)
-      elsif orig.is_a? Document
-        return Document.new(orig.path, {:site => site, :collection => orig.collection})
+    def new_file(site, orig, lang)
+      if orig.is_a? Document
+        Document.new(orig.path, {:site => site, :collection => orig.collection})
+      else
+       orig.class.new(site, site.source, orig.dir, orig.name)
       end
-      throw unless false
     end
   end
 end

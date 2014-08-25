@@ -1,8 +1,12 @@
 ---
 layout: page
-title: Accueil
 featured: 1
-lang: fr
+languages:
+  eo:
+      title: Ĉefpaĝo
+  fr:
+      title: Accueil
+      show_translations: true
 ---
         <ul class="posts">
           {% assign posts = site.posts | where:"lang",page.lang %}

@@ -10,4 +10,7 @@ serve:
 _site:	.
 	jekyll build
 
+new:
+	@echo -n 'Title ?'
+
 

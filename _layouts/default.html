@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/main.css" />
     <link rel="alternate" type="application/xml+atom" title="{% t Flux ATOM %}" href="{{ site.baseurl }}/{% if page.lang != site.lang %}feed.{{ page.lang }}.xml{%endif %}" />
+    {% for t in page.translations %}
+    <link rel="alternate" type="text/html" title="{{ t[1].title }}"
+          hreflang="{{ t[1].lang }}"  href="{{ site.baseurl }}{{ t[1].url }}" class="{{ t[1].lang }}" />{% endfor %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
     <link rel="shortcut icon" type="image/png"    href="{{ site.baseurl }}/favicon.png" />
   </head>
@@ -23,6 +26,7 @@
     <div id="skip-links">
       <a href="#content">{% t Aller au contenu %}</a>
       <a href="#menu">{% t Aller au menu %}</a>
+      <a href="{{ site.baseurl }}/feed.xml">{% t Flux ATOM %}</a>
     </div>
 
     <header id="banner">
@@ -36,6 +40,19 @@
             {% endif %}{% endfor %}
           </ul>
         </nav>
+        {% if page.translations and page.show_translations %}
+        <nav id="translations">
+          <ul>{% for t in page.translations %}
+            <li>
+                <a hreflang="{{ t[1].lang }}" href="{{ site.baseurl }}{{ t[1].url }}"
+                   title="{{ t[1].title }}">
+                   <img src="{{ site.baseurl }}/img/{{ t[0] }}.png" alt="{{ t[0] }}" />
+                 </a>
+             </li>
+               {% endfor %}
+          </ul>
+        </nav>
+       {% endif %}
       </div>
     </header>
 
