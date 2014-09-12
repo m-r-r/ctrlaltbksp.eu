@@ -8,6 +8,11 @@ url: "http://ctrlaltbksp.eu"
 lang: fr
 timezone: Europe/Paris
 
+# Author vcard
+author:
+    full_name: Mickaël RAYBAUD-ROIG
+    email: raybaudroigm@gmail.com
+
 # Build settings
 permalink: date
 markdown: kramdown
@@ -20,7 +25,14 @@ kramdown:
         coderay_wrap: div
         coderay_line_numbers: nil
         coderay_tab_width: 4
+# Plugins settings
+gems: ['jekyll-assets']
 sass:
     style: :compressed
     sass_dir: css
+
+assets:
+    cache: true
+    js_compressor: uglifier
+    css_compressor: sass
 

@@ -1,0 +1,13 @@
+{% capture fallback  %}
+<a href="/contact.php">{% t Me contacter %}</a>
+{% endcapture %}
+{% capture email_link  %}
+<a class="email" itemprop="email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+{% endcapture %}
+        <div class="vcard widget" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <p>
+            <strong class="fn" itemprop="name">{{ site.author.full_name }}</strong><br />
+            <a class="url" href="{{ site.url }}">{{ site.url }}</a><br />
+            {{ email_link | obfurscate: fallback }}
+          </p>
+        </div>

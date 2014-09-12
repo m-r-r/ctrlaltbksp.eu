@@ -1,0 +1,14 @@
+    <footer id="footer">
+      <div class="inner">
+        {% include author_vcard.html %}
+        <div id="html5" class="widget">
+          <p>
+            <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
+              title="{% t Validation HTML5 %}"><img src="/img/html5-valid.png" alt="{% t Logo HTML5 %}" /></a>
+            {% t Ce site respecte les standards du Web. %}
+          </p>
+        </div>
+        <p class="copyright">{% t Copyright %} &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
+        {% include autoreload.html %}
+      </div>
+    </footer>

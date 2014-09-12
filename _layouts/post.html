@@ -12,3 +12,44 @@ layout: default
         </div>
 			</article>
 
+      <aside class="inner comments">
+        {% if page.comment_count > 0  %}
+        <h2 class="h2">Commentaires</h2>
+        {% for c in page.comments %}
+        <article class="comment">
+          <header>
+          {% assign date_fmt = '%d/%m/%Y à %H:%M' | t %}
+          {% capture date %}<time datetime="{{ c.date | date_to_xmlschema }}" pubdate>{{ c.date | date: date_fmt }}</time>{% endcapture %}
+          {% capture name %}{% if c.link %}<a href="{{ c.link }}" rel="nofollow">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}{% endcapture %}
+          <p class="meta">
+            {{ "Posté le  %1 par  %2" | t:date,name }}
+          </p>
+          </header>
+          {{ c.message | markdownify }}
+        </article>
+        {% endfor %}
+        <hr />
+        {% else %}
+        <h2 class="h2">Poster un commentaire</h2>
+        {% endif %}
+        <p>Vous pouvez envoyer un commentaire en utilisant le formulaire ci-dessous.</p>
+        <form method="POST" action="/submit-comment.php?return_to={{ page.url }}" class="visible">
+          <div class="entry">
+            <label for="name">{% t Nom : %}</label>
+            <input type="text" required="required" name="name" id="name" placeholder="{% t Votre nom %}" /><br />
+          </div>
+          <div class="entry">
+            <label for="from">{% t E-Mail : %}</label>
+            <input type="text" required="required" name="from" id="name" placeholder="{% t Votre adresse mail %}" /><br />
+          </div>
+          <div class="entry">
+            <label for="link">{% t Site Web : %}</label>
+            <input type="url" name="link" id="link" placeholder="{% t Votre site Web (facultatif) %}" /><br />
+          </div>
+          <label for="message">{% t Message : %}</label><br />
+          <textarea required="required" name="message" id="message" placeholder="{% t Entrez votre message ici %}"></textarea><br />
+          <input type="hidden" name="post_id" value="{{ page.id }}" />
+          <input type="submit" value="{% t Envoyer ! %}" />
+        </form>
+      </aside>
+

@@ -6,6 +6,14 @@ featured: 2
 sitemap: false
 allow_robots: false
 ---
+{% capture fallback  %}
+<a href="/contact.php">Me contacter</a>
+{% endcapture %}
+{% capture email_link  %}
+<a class="value" href="mailto:raybaudroigm@mail.com">raybaudroigm@gmail.com</a>
+{% endcapture %}
+        <div class="vcard widget" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <p>
 
 <div class="hResume" id="content" role="main">
   <!-- Contact -->
@@ -24,11 +32,11 @@ allow_robots: false
 
     <dl class="tel">
       <dt class="type" title="mobile">Tél:</dt>
-      <dd class="value">&#48;&#54;&#32;&#54;&#57;&#32;&#51;&#48;&#32;&#49;&#54;&#32;&#52;&#57;</dd>
+      <dd class="value">&#48;<!-- (╯°□°)╯︵ ┻━┻ -->6&nbsp;&#54;9&nbsp;3&#48;&nbsp;&#49;6&nbsp;&#52;<!-- ┬─┬ノ( º _ ºノ) -->9</dd>
     </dl>
     <dl class="email">
       <dt class="type" title="email">Email:</dt>
-      <dd><a class="value" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#114;&#97;&#121;&#98;&#97;&#117;&#100;&#114;&#111;&#105;&#103;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></dd>
+      <dd>{{ email_link | obfurscate:fallback }}</dd>
     </dl>
     <dl class="url">
       <dt class="type" title="url">Site Web:</dt>

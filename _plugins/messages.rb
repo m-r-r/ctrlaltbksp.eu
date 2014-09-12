@@ -24,17 +24,17 @@ module Jekyll
             end
         end
 
-        def translate(ctx, msg, *fmt)
+        def translate(ctx, msg, fmt)
             lang = ctx.registers[:page]['lang'] || @default_lang
             msg = catalogs[lang][msg] || msg
-            msg.gsub!(/([^%]|^)%\d+/) {|n| fmt[n[1,n.length].to_i-1].to_s }
+            msg.gsub!(/(?<!%)%\d+/) {|n| fmt[n.slice(1).to_i-1].to_s }
             msg.sub!('%%', '%')
             msg.to_liquid
         end
 
-        def self.translate(ctx, msg, *fmt)
+        def self.translate(ctx, msg, fmt)
             @instance ||= self.new(ctx.registers[:site])
-            @instance.translate(ctx, msg, *fmt)
+            @instance.translate(ctx, msg, fmt)
         end
     end
 
@@ -47,14 +47,14 @@ module Jekyll
             end
 
             def render(ctx)
-                GettextPlugin.translate(ctx, @msg, *@fmt)
+                GettextPlugin.translate(ctx, @msg, @fmt)
             end
         end
     end
 
     module Filters
         def gettext(msg, *fmt)
-            GettextPlugin.translate(@context, msg.to_s, *fmt)
+            GettextPlugin.translate(@context, msg.to_s, fmt)
         end
 
         alias :t :gettext 

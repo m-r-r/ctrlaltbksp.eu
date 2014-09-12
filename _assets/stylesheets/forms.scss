@@ -1,0 +1,58 @@
+form {
+    max-width: 80%;
+    margin: 0 auto;
+
+    &.visible {
+        border: thin solid #ddd;
+        border-radius: .5em;
+        padding: 1em;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    border: thin solid #999;
+    padding: .25em;
+    background-color: white;
+    color: #333;
+    &:focus {
+        border: thin solid #666;
+    }
+}
+
+.entry {
+    margin: .5em 0;
+
+    label, input {
+        display: inline-block;
+    }
+
+    label {
+        width: 40%;
+        float: left;
+    }
+
+    input {
+        width: 50%;
+        float: right;
+        min-width: 15em;
+    }
+
+    @media (max-width: 30em) {
+        label, input {
+            display: block;
+            width: auto;
+            float: none;
+        }
+        .entry { margin-bottom: 0; }
+    }
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 20em;
+    margin: .5em 0;
+}
