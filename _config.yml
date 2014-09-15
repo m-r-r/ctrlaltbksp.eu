@@ -15,16 +15,13 @@ author:
 
 # Build settings
 permalink: date
-markdown: kramdown
+markdown: KramdownPygments
 kramdown:
     input: GFM
     header_offset: 2
-    use_coderay: true
+    use_coderay: false
     hard_wrap: false
-    coderay:
-        coderay_wrap: div
-        coderay_line_numbers: nil
-        coderay_tab_width: 4
+
 # Plugins settings
 gems: ['jekyll-assets']
 sass:
