@@ -21,6 +21,10 @@ kramdown:
     header_offset: 2
     use_coderay: false
     hard_wrap: false
+exclude:
+    - Makefile
+    - Gemfile
+    - Gemfile.lock
 
 # Plugins settings
 gems: ['jekyll-assets']
