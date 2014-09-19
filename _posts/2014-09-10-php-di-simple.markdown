@@ -375,8 +375,13 @@ use Zend\Db\Adapter\Adapter;
 
 class Services extends DependencyInjector
 {
+<<<<<<< HEAD
     public function __construct($config) {
         parent::__construct($config);
+=======
+    public function __construct($settings) {
+        parent::__construct($settings);
+>>>>>>> 0c3cb0f9284d01f0307237ec1bbc845634b5d2a9
 
         $this->collector = function($_, $config) {
             return new RouteCollector(

@@ -79,6 +79,7 @@ class Jekyll::Converters::Markdown::KramdownPygments
 
   def convert(content)
     html = Kramdown::Document.new(content, {
+<<<<<<< HEAD
         :auto_ids              => @config['kramdown']['auto_ids'],
         :footnote_nr           => @config['kramdown']['footnote_nr'],
         :entity_output         => @config['kramdown']['entity_output'],
@@ -87,6 +88,15 @@ class Jekyll::Converters::Markdown::KramdownPygments
         :kramdown_default_lang => @config['kramdown']['default_lang'],
         :header_offset         => @config['kramdown']['header_offset'],
         :input                 => @config['kramdown']['input']
+=======
+        :auto_ids             => @config['kramdown']['auto_ids'],
+        :footnote_nr          => @config['kramdown']['footnote_nr'],
+        :entity_output        => @config['kramdown']['entity_output'],
+        :toc_levels           => @config['kramdown']['toc_levels'],
+        :smart_quotes         => @config['kramdown']['smart_quotes'],
+        :kramdown_default_lang => @config['kramdown']['default_lang'],
+        :input                => @config['kramdown']['input']
+>>>>>>> 0c3cb0f9284d01f0307237ec1bbc845634b5d2a9
     }).to_pygments_html
     return html;
   end
