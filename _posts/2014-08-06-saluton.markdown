@@ -1,0 +1,23 @@
+---
+# vim: set lbr tw=80 spell spelllang=eo:
+layout: post
+title:  "Bonvenon !"
+date:   2014-08-25 13:14:22 +0200
+lang: eo
+---
+
+Saluton,
+
+Bonvenon al la mia nova retpaĝaro, [CtrlAltBksp.eu](http://ctrlaltbksp.eu) :-)
+
+Fakte, tiu retpaĝaro ne estas tute nova: ĝi jam ekzistas ekde la fino de
+Majo (la unua ero estas datita de la 31ᵃ), sed ĝi antaŭe estis nur franca
+blogo.
+
+Dume, mi esperantiĝis (aŭ almenaŭ mi lernis Esperanton sufice por skibi ĉi
+tiun tekston :-p), tial mi planas skibi en Esperanto ĉi tie.
+
+Do, tui retopagaro temas ĉefe pri kompudikon kaj teĥnologion, sed mi ankaŭ skribos
+pri libroj aŭ noveloj ke mi legis, aŭ aliaj temoj…
+
+Ĝis.
