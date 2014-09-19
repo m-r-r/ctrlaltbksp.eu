@@ -2,7 +2,7 @@
 layout: default
 ---
 
-			<article class="inner post" id="content" role="main" itemprop="blogPost" itempscope="itemscope" itemtype="http://schema.org/BlogPosting">
+			<article class="inner post" id="content" role="main" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
 				<header>
 					<h2 itemprop="name">{{ page.title }}</h2>
 					{% include metadata.html for=page %}
@@ -19,7 +19,7 @@ layout: default
         <article class="comment">
           <header>
           {% assign date_fmt = '%d/%m/%Y à %H:%M' | t %}
-          {% capture date %}<time datetime="{{ c.date | date_to_xmlschema }}" pubdate>{{ c.date | date: date_fmt }}</time>{% endcapture %}
+          {% capture date %}<time datetime="{{ c.date | date_to_xmlschema }}" itemprop="datePublished">{{ c.date | date: date_fmt }}</time>{% endcapture %}
           {% capture name %}{% if c.link %}<a href="{{ c.link }}" rel="nofollow">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}{% endcapture %}
           <p class="meta">
             {{ "Posté le  %1 par  %2" | t:date,name }}
@@ -40,7 +40,7 @@ layout: default
           </div>
           <div class="entry">
             <label for="from">{% t E-Mail : %}</label>
-            <input type="text" required="required" name="from" id="name" placeholder="{% t Votre adresse mail %}" /><br />
+            <input type="text" required="required" name="from" id="from" placeholder="{% t Votre adresse mail %}" /><br />
           </div>
           <div class="entry">
             <label for="link">{% t Site Web : %}</label>

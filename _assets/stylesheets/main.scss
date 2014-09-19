@@ -418,60 +418,45 @@ body {
 }
 
 
-#translations {
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        margin: 0 .5em;
-
-        li {
-            display: inline-block;
-            opacity: .65;
-            transition: opacity ease-in-out 350ms;
-
-            &:hover, &:focus {
-                opacity: 1;
-            }
-
-            &, a, img {
-                width: 3em; 
-                height: 2em; /* width × 0.67 */ 
-                margin-bottom: 0;
-                padding: 0;
-                vertical-align: middle;
-            }
-        }
-    }
-
-    display: none;
-
-    @media (min-width: 42em) {
-        float: right;
-        display: inline-block;
-        vertical-align: middle;
-    }
-}
-
 #footer {
     border-top: 4px solid #eee;
     overflow: hidden;
+    text-align: center; // Les widgets doivent être centrés
 
     .widget {
-        font-size: 80%;
-        color: #555;
-        float: left;
-        width: 15em;
-        margin-right: 3em;
         display: inline-block;
+        width: 30%;
+        padding: 0 1%;
+        min-width: 15em;
+        text-align: left;
+        vertical-align: top;
+
+        font-size: 80%; 
+        color: #555;
+
+        @media (max-width: 42em) { width: 47%!important }
+        @media (max-width: 30em) { width: auto; }
     }
 
     .widget a {
         color: #8085C1;
     }
 
-    #html5 img {
+    .widget img {
         display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 2.5em;
+        max-width: 7em;
+    }
+
+    .widget#translations,
+    .widget#html5 {
+        text-align: center;
+    }
+
+    #translations img {
+        border: thin solid #aaa;
     }
 
     .copyright {
@@ -479,14 +464,13 @@ body {
         font-size: 80%;
         color: #555;
         clear: both;
+        text-align: left;
     }
 }
 
 
 /*****************************************************************************/
-/*
-/* Posts
-/*
+/* Posts                                                                     *
 /*****************************************************************************/
 
 .inner {

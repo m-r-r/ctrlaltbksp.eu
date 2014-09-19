@@ -4,9 +4,26 @@
         <div id="html5" class="widget">
           <p>
             <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
-              title="{% t Validation HTML5 %}"><img src="/img/html5-valid.png" alt="{% t Logo HTML5 %}" /></a>
+              title="{% t Validation HTML5 %}"><img src="{% asset_path html5-valid.png %}" alt="{% t Logo HTML5 %}" /></a>
             {% t Ce site respecte les standards du Web. %}
           </p>
+        </div>
+        <div id="translations" class="widget">
+          {% if page.lang != 'eo' %}
+          <p lang="eo">
+            <a href="{{ url }}">
+              <img alt="Esperanta flago" src="{% asset_path eo.png %}" role="presentation" />
+            </a>
+            Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.baseurl }}/index.eo.html" hreflang="eo">en Esperanto.</a>
+          </p>
+          {% else %}
+          <p lang="fr">
+            <a href="{{ url }}">
+              <img alt="Drapeau français" src="{% asset_path fr.png %}" role="presentation" />
+            </a>
+            Ce site existe aussi <a href="{{ site.baseurl }}/index.html" hreflang="fr">en Français.</a>
+          </p>
+          {% endif %}
         </div>
         <p class="copyright">{% t Copyright %} &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
         {% include autoreload.html %}

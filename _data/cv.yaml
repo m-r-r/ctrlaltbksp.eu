@@ -1,18 +1,15 @@
-formation:
+diplomes:
     - dtstart: 2013
       dtend: 2014
       location: IUT Nice
       title: License Professionnelle A.I.I.
-
-
-diplomes:
     - dtstart: 2011
       dtend: 2013
       location: Lycée Professionnel Les Eucalyptus (Nice)
       title: B.T.S. Électrotechnique
     - dtstart: 2008
       dtend: 2011
-      location: Lycée Professionnel Les Eucalyptus (Nice)
+      location: Lycée Professionnel Léon Chiris (Grasse)
       title: Baccalauréat Professionnel Électrotechnique
 
 

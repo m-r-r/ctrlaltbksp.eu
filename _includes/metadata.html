@@ -3,6 +3,6 @@
 {% assign date = node.date | date: date_fmt %}
 <p class="meta">
 {% if node.date %}
-{% t Publié le  %} <time datetime="{{ node.date | date_to_xmlschema }}" pubdate>{{ date }}</time>.
+{% t Publié le  %} <time datetime="{{ node.date | date_to_xmlschema }}" itemprop="dateCreated">{{ date }}</time>.
 {% endif %}
 </p>

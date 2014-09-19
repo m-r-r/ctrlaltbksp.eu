@@ -12,12 +12,10 @@ allow_robots: false
 {% capture email_link  %}
 <a class="value" href="mailto:raybaudroigm@mail.com">raybaudroigm@gmail.com</a>
 {% endcapture %}
-        <div class="vcard widget" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
-          <p>
 
 <div class="hResume" id="content" role="main">
   <!-- Contact -->
-  <section class="contact vcard inner" id="cv-contact">
+  <section class="contact vcard inner" id="cv-contact" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
     <h2 class="fn n">
       <span class="given-name">Mickaël</span>
       <span class="family-name">Raybaud-Roig</span>
@@ -45,24 +43,6 @@ allow_robots: false
   </section>
 
   <!-- Formation -->
-  <section class="inner" id="cv-formation">
-    <h3>Formation</h3>
-    <table class="vcalendar">
-      {% for e in site.data.cv.formation %}
-      <tr class="education vevent">
-        <td>
-          <span class="summary">{{ e.title }}</span><br />
-          <span class="location">{{ e.location }}</span>
-        </td>
-        <td class="date_duration">
-          <time class="dtstart" datetime="{{ e.dtstart }}">{{ e.dtstart }}</time>
-          - <time class="dtend" datetime="{{ e.dtend }}">{{ e.dtend }}</time>
-        </td>
-      </tr>
-      {% endfor %}
-    </table>
-  </section>
-
   <section class="inner" id="cv-diplomes">
     <h3>Diplômes</h3>
     <table class="vcalendar">
@@ -81,6 +61,70 @@ allow_robots: false
     </table>
   </section>
 
+  <!-- Compétences -->
+  <section class="skill-list inner">
+    <h3>Compétences</h3>
+
+    <div class="skillset">
+      <h4>Langages de Programmation</h4>
+      <p>
+        Pendant mes études, j'ai appris les langages de programmation ci-dessous:
+      </p>
+      <ul>
+        <li><a href="http://php.net">PHP</a> &mdash; J'ai déjà réalisé un site Web à l'aide de ce langage.</li>
+        <li><a href="http://www.oracle.com/technetwork/java/index.html">Java</a> &mdash; Je connais la plateforme Android,
+        et j'ai déjà utilisé Swing pour faire des interfaces graphiques.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> &mdash; J'ai utilisé ce langage pour faire
+        de la validation de formulaires et des animations.</li>
+        <li><a href="https://fr.wikipedia.org/wiki/The_C_Programming_Language">Langage C</a> &mdash; Réalisation de plusieurs projets sur
+        microprocesseur ATmega16, sur Arduino Micro, et sur PC.</li>
+        <li><a href="https://fr.wikipedia.org/wiki/The_C++_Programming_Language">Langage C++</a> &mdash; Réalisation d'un Jeu de la Vie, et
+        d'une interface graphique en Qt5.</li>
+      </ul>
+
+      <p>
+        J'ai aussi eu l'occasion d'apprendre les langages suivants:
+      </p>
+      <ul>
+        <li><a href="http://python.org">Python</a> &mdash; C'est le premier langage que j'ai appris,
+        j'ai une très bonne connaissance des versions 2.6 à 3.2.</li>
+        <li><a href="http://haskell.org">Haskell</a> &mdash; C'est un langage que je suis en train d'apprendre, j'ai un niveau de débutant.</li>
+        <li><a href="http://ruby-lang.org">Ruby</a> &mdash; Niveau débutant: J'ai réalisé des extensions pour le système de blog <a href="http://jekyll.org">Jekyll</a>.</li>
+        <li><a href="http://rust-lang.org">Rust</a> &mdash; Niveau moyen.</li>
+        <li><a href="http://vim.org">VimL</a> &mdash; J'ai réalisé un plug-in pour Vim, j'ai un bon niveau.</li>
+      </ul>
+    </div>
+
+    <div class="skillset">
+      <h4>Technologies du Web</h4>
+      <ul>
+        <li>Maîtrise du langage <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a>.</li>
+        <li>Bonne connaissance du <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>.</li>
+        <li>Maîtrise du langage <a href="https://fr.wikipedia.org/wiki/SQL">SQL</a>.</li>
+        <li>Utilisation du framework Web <a href="http://flask.pocoo.org/">Flask</a>.</li>
+      </ul>
+    </div>
+
+    <div class="skillset">
+      <h4>Logiciels</h4>
+      <ul>
+        <li>Bonne maîtrise du système GNU/Linux, notement des distributions <a href="http://debian.org">Debian</a>
+        et <a href="http://archlinux.org">ArchLinux</a>.</li>
+        <li>Utilisation du serveur Web <a href="http://httpd.apache.org">Apache 2</a>.</li>
+        <li>Maîtrise des systèmes de gestions de version <a href="http://git-scm.com/">Git</a> et
+        <a href="http://mercurial.selenic.com/">Hg/Mercurial</a>.</li>
+      </ul>
+    </div>
+
+    <div class="skillset">
+      <h4>Langues vivantes</h4>
+      <ul>
+        <li>Bon niveau en Anglais (Score au TOEIC: <em>740</em>).</li>
+        <li>Niveau débutant en Espéranto.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Expériences -->
   <section class="inner">
     <h3>Expériences profesionnelles</h3>
@@ -94,73 +138,9 @@ allow_robots: false
         <td class="date_duration">
           Du <time class="dtstart" datetime="{{ e.dtstart }}">{{ e.dtstart | date:'%d/%m/%Y' }}</time><wbr />
             au <time class="dtend" datetime="{{ e.dtend }}">{{ e.dtend | date:'%d/%m/%Y' }}</time>
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    </section>
-
-    <!-- Compétences -->
-    <section class="skill-list inner">
-      <h3>Compétences</h3>
-
-      <div class="skillset">
-        <h4>Langages de Programmation</h4>
-        <p>
-        Pendant mes études, j'ai appris les langages de programmation ci-dessous:
-        </p>
-        <ul>
-          <li><a href="http://php.net">PHP</a> &mdash; J'ai déjà réalisé un site Web à l'aide de ce langage.</li>
-          <li><a href="http://www.oracle.com/technetwork/java/index.html">Java</a> &mdash; Je connais la plateforme Android,
-          et j'ai déjà utilisé Swing pour faire des interfaces graphiques.</li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> &mdash; J'ai utilisé ce langage pour faire
-          de la validation de formulaires et des animations.</li>
-          <li><a href="https://fr.wikipedia.org/wiki/The_C_Programming_Language">Langage C</a> &mdash; Réalisation de plusieurs projets sur
-          microprocesseur ATmega16, sur Arduino Micro, et sur PC.</li>
-          <li><a href="https://fr.wikipedia.org/wiki/The_C++_Programming_Language">Langage C++</a> &mdash; Réalisation d'un Jeu de la Vie, et
-          d'une interface graphique en Qt5.</li>
-        </ul>
-
-        <p>
-        J'ai aussi eu l'occasion d'apprendre les langages suivants:
-        </p>
-        <ul>
-          <li><a href="http://python.org">Python</a> &mdash; C'est le premier langage que j'ai appris,
-          j'ai une très bonne connaissance des versions 2.6 à 3.2.</li>
-          <li><a href="http://haskell.org">Haskell</a> &mdash; C'est un langage que je suis en train d'apprendre, j'ai un niveau de débutant.</li>
-          <li><a href="http://ruby-lang.org">Ruby</a> &mdash; Niveau débutant: J'ai réalisé des extensions pour le système de blog <a href="http://jekyll.org">Jekyll</a>.</li>
-          <li><a href="http://rust-lang.org">Rust</a> &mdash; Niveau moyen.</li>
-          <li><a href="http://vim.org">VimL</a> &mdash; J'ai réalisé un plug-in pour Vim, j'ai un bon niveau.</li>
-        </ul>
-      </div>
-
-      <div class="skillset">
-        <h4>Technologies du Web</h4>
-        <ul>
-          <li>Maîtrise du langage <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a>.</li>
-          <li>Bonne connaissance du <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>.</li>
-          <li>Maîtrise du langage <a href="https://fr.wikipedia.org/wiki/SQL">SQL</a>.</li>
-          <li>Utilisation du framework Web <a href="http://flask.pocoo.org/">Flask</a>.</li>
-        </ul>
-      </div>
-
-      <div class="skillset">
-        <h4>Logiciels</h4>
-        <ul>
-          <li>Bonne maîtrise du système GNU/Linux, notement des distributions <a href="http://debian.org">Debian</a>
-          et <a href="http://archlinux.org">ArchLinux</a>.</li>
-          <li>Utilisation du serveur Web <a href="http://httpd.apache.org">Apache 2</a>.</li>
-          <li>Maîtrise des systèmes de gestions de version <a href="http://git-scm.com/">Git</a> et
-          <a href="http://mercurial.selenic.com/">Hg/Mercurial</a>.</li>
-        </ul>
-      </div>
-
-      <div class="skillset">
-        <h4>Langues vivantes</h4>
-        <ul>
-          <li>Bon niveau en Anglais (Score au TOEIC: <em>740</em>).</li>
-          <li>Niveau débutant en Espéranto.</li>
-        </ul>
-      </div>
-    </section>
-  </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </section>
+</div> <!-- /#content -->

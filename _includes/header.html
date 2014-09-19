@@ -9,18 +9,5 @@
             {% endif %}{% endfor %}
           </ul>
         </nav>
-        {% if page.translations and page.show_translations %}
-        <nav id="translations">
-          <ul>{% for t in page.translations %}
-            <li>
-                <a hreflang="{{ t[1].lang }}" href="{{ site.baseurl }}{{ t[1].url }}"
-                   title="{{ t[1].title }}">
-                   <img src="{{ site.baseurl }}/img/{{ t[0] }}.png" alt="{{ t[0] }}" />
-                 </a>
-             </li>
-               {% endfor %}
-          </ul>
-        </nav>
-       {% endif %}
       </div>
     </header>
