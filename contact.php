@@ -1,7 +1,10 @@
 ---
 layout: php-page
-title: Contact
-lang: fr
+languages:
+    fr:
+        title: Contact
+    eo:
+        title: Kontatki min
 featured: 4
 allow_robots: false
 sitemap: false
@@ -14,7 +17,6 @@ $email   = filter_input(INPUT_POST,   'email',          FILTER_VALIDATE_EMAIL,  
 $name    = filter_input(INPUT_POST,   'name',           FILTER_SANITIZE_STRING,  true);
 $message = filter_input(INPUT_POST,   'message',        FILTER_SANITIZE_STRING,  true);
 $method  = filter_input(INPUT_SERVER, 'REQUEST_METHOD', FILTER_SANITIZE_STRING,  true);
-$uri     = filter_input(INPUT_SERVER, 'PATH_INFO',      FILTER_SANITIZE_STRING,  true);
 $ip      = filter_input(INPUT_SERVER, 'REMOTE_ADDR',    FILTER_SANITIZE_STRING,  true);
 
 
@@ -24,7 +26,7 @@ if ($method == 'POST' && !$missing_fields) {
   $headers = "From: $name <$email>\r\n";
   $message = "Ip: $ip\nDate: " . date('Y-m-d H:i:s') . "\n\n" . wordwrap($message, 75);
   $sent = mail('{{ site.author.email }}', '{%t Formulaire de contact %}', $message, $headers);
-  if (true !== $sent && $uri) {
+  if (true !== $sent) {
     ob_end_clean();
     header('HTTP/1.1 500 Internal Server Error');
     exit(0);
@@ -32,7 +34,7 @@ if ($method == 'POST' && !$missing_fields) {
   else {
     ob_end_clean();
     header('HTTP/1.1 303 Redirection');
-    header("Location: http://" . DOMAIN . "/$uri?success=true");
+    header('Location: {{ site.url }}{{ page.url }}?success=true');
     exit(0);
   }
 }

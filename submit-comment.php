@@ -14,7 +14,6 @@ const DOMAIN = 'ctrlaltbksp.eu';
 
 $success = filter_input(INPUT_GET,    'success',        FILTER_VALIDATE_BOOLEAN, true);
 $return_to = filter_input(INPUT_GET,  'return_to',      FILTER_SANITIZE_URL,     true);
-$uri     = filter_input(INPUT_SERVER, 'PHP_SELF',       FILTER_SANITIZE_STRING,  true);
 $method = filter_input(INPUT_SERVER,  'REQUEST_METHOD', FILTER_SANITIZE_STRING,  true);
 $ip      = filter_input(INPUT_SERVER, 'REMOTE_ADDR',    FILTER_SANITIZE_STRING,  true);
 
@@ -64,7 +63,7 @@ if ($method == 'POST' && !$missing_field) {
     $payload .= "$json_data\r\n\r\n";
     $payload .= "--$boundary--";
 
-    if ((true === mail(EMAIL_ADDRESS, SUBJECT, $payload, $headers)) || !$uri) {
+    if (true === mail(EMAIL_ADDRESS, SUBJECT, $payload, $headers)) {
         ob_end_clean();
         header('HTTP/1.1 500 Internal Server Error');
         exit;
@@ -72,7 +71,7 @@ if ($method == 'POST' && !$missing_field) {
     else {
         ob_end_clean();
         header('HTTP/1.1 303 Redirection');
-        header("Location: http://".DOMAIN."/$uri?return_to=$return_to&success=true");
+        header("Location: {{ site.url }}{{ page.url }}?return_to=$return_to&success=true");
         exit;
     }
 }

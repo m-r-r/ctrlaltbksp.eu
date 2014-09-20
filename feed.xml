@@ -1,16 +1,31 @@
 ---
 published: true
+languages:
+    fr:
+        title: Flux ATOM
+    eo:
+        title: ATOM-Fluo
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ page.lang }}">
  
  <title>{{ site.title }}</title>
- <link href="http://ctrlaltbksp.eu/feed.atom" rel="self"/>
+ <link href="{{ site.url }}{{ page.url }}" rel="self" type="application/atom+xml" />
+ {% for t in page.translations %}
+ <link href="{{ site.url }}{{ t[1].url }}" rel="alternate"
+     type="application/atom+xml" hreflang="{{ t[0] }}"/>
+ {% endfor %}
+ {% if page.lang == site.lang %}
+ <link href="{{ site.url }}" rel="alternate" type="text/html" />
+ {% else %}
+ <link href="{{ site.url }}/index.{{ page.lang }}.html" rel="alternate" hreflang="{{ page.lang }}" type="text/html" />
+ {% endif %}
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://ctrlaltbksp.eu/</id>
  
- {% for post in site.posts %}
+ {% assign posts = site.posts | where:"lang",page.lang %}
+ {% for post in posts limit: 5 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://ctrlaltbksp.eu/{{ post.url }}"/>
@@ -19,5 +34,4 @@ published: true
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
 </feed>
