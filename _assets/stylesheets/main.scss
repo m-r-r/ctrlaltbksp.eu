@@ -19,9 +19,6 @@ body {
 }
 
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
 a, a:visited { 
     text-decoration: none;
     color: #285577;
@@ -236,6 +233,10 @@ address, cite, var {
   font-style: italic;
 }
 
+p, ul, ol, dl, dd, blockquote, address, pre, table, fieldset {
+  margin-bottom: 1.5em;
+}
+
 /* End Tiny Typo */
 
 
@@ -290,7 +291,7 @@ table {
 /*****************************************************************************/
 .posts {
   list-style-type: none;
-  margin: 0 0 2em 0;
+  margin: 0 0 1.5em 0;
   padding: 0;
 
   li {
@@ -476,11 +477,6 @@ body {
 .inner {
     .meta {
         color: #aaa;
-    }
-
-
-    ul, ol {
-        margin-left: 1.35em;
     }
 
     code {
