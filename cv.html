@@ -128,19 +128,19 @@ allow_robots: false
   <!-- Expériences -->
   <section class="inner">
     <h3>Expériences profesionnelles</h3>
-    <table class="vcalendar">
+    <ol class="vcalendar">
       {% for e in site.data.cv.experiences %}
-      <tr class="experience vevent">
-        <td>
-          <span class="summary">{{ e.title }}</span><br />
-          <span class="location">{{ e.location }}</span>
-        </td>
-        <td class="date_duration">
-          Du <time class="dtstart" datetime="{{ e.dtstart }}">{{ e.dtstart | date:'%d/%m/%Y' }}</time><wbr />
+      <li>
+        <article class="experience vevent">
+          <p class="date_duration">
+            Du <time class="dtstart" datetime="{{ e.dtstart }}">{{ e.dtstart | date:'%d/%m/%Y' }}</time>
             au <time class="dtend" datetime="{{ e.dtend }}">{{ e.dtend | date:'%d/%m/%Y' }}</time>
-        </td>
-      </tr>
+          </p>
+          <h4 class="summary">{{ e.title }}</h4>
+          <p class="location">{{ e.location }}</p>
+        </article>
+      </li>
       {% endfor %}
-    </table>
+    </ol>
   </section>
 </div> <!-- /#content -->

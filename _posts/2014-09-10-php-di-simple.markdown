@@ -425,7 +425,8 @@ les objets dépendants de cet objets sont initialisés récursivement, et le
 bon objet est retournée.
 
 
-
+[dp]:      https://fr.wikipedia.org/w/index.php?title=Design_pattern
+           "Patron de conception — Wikipédia"
 [aura-di]: https://packagist.org/packages/aura/di
            "aura/di — Packagist"
 [zend-di]: https://packagist.org/packages/zendframework/zend-di
