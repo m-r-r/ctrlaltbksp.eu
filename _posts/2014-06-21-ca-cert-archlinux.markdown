@@ -3,7 +3,7 @@
 layout: post
 title:  "Installer le certificat TLS de CAcert.org sous ArchLinux"
 date: 2014-06-21 17:25:51 +0200
-lang: fr
+language: fr
 tags:
     - GNU/Linux
     - ArchLinux

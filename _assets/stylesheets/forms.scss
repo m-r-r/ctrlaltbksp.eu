@@ -12,6 +12,9 @@ form {
 input[type="text"],
 input[type="email"],
 input[type="url"],
+input[type="submit"],
+input[type="reset"],
+button,
 textarea {
     border: thin solid #999;
     padding: .25em;
@@ -56,3 +59,13 @@ textarea {
     min-height: 20em;
     margin: .5em 0;
 }
+
+.form-sent {
+    display: none;
+}
+
+.form-sent:target {
+    display: block !important;
+}
+
+form .form-sent:target ~ * { display: none ; }

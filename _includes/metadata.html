@@ -1,8 +1,6 @@
 {% assign node = include.for %}
-{% assign date_fmt = '%d/%m/%Y à %H:%M' | t %}
-{% assign date = node.date | date: date_fmt %}
 <p class="meta">
 {% if node.date %}
-{% t Publié le  %} <time datetime="{{ node.date | date_to_xmlschema }}" itemprop="dateCreated">{{ date }}</time>.
+{% t 'post.published' %} <time datetime="{{ node.date | date_to_xmlschema }}" itemprop="dateCreated">{{ node.date | tdate: 'post.datetime_format' }}</time>.
 {% endif %}
 </p>

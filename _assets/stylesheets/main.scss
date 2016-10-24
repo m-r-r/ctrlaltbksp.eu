@@ -314,6 +314,10 @@ body {
     max-width: 42em;
     margin: 0 auto;
     padding: 1.5em 1em;
+    
+    @media (min-width: 60em) {
+      max-width: 55em;
+    }
 }
 
 #skip-links {
@@ -483,6 +487,7 @@ body {
         border: 1px solid #ddd;
         background-color: #eef;
         padding: 0 .2em;
+        font-size: .85em;
     }
 
     pre {

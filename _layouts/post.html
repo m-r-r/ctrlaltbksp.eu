@@ -14,15 +14,14 @@ layout: default
 
       <aside class="inner comments">
         {% if page.comment_count > 0  %}
-        <h2 class="h2">Commentaires</h2>
+        <h2 class="h2">{% t 'post.comments.title' %}</h2>
         {% for c in page.comments %}
         <article class="comment">
           <header>
-          {% assign date_fmt = '%d/%m/%Y à %H:%M' | t %}
-          {% capture date %}<time datetime="{{ c.date | date_to_xmlschema }}" itemprop="datePublished">{{ c.date | date: date_fmt }}</time>{% endcapture %}
+          {% capture date %}<time datetime="{{ c.date | date_to_xmlschema }}" itemprop="datePublished">{{ c.date | tdate: 'post.comments.date_format' }}</time>{% endcapture %}
           {% capture name %}{% if c.link %}<a href="{{ c.link }}" rel="nofollow">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}{% endcapture %}
           <p class="meta">
-            {{ "Posté le  %1 par  %2" | t:date,name }}
+            {% t 'post.comments.meta' : name, date %}
           </p>
           </header>
           {{ c.message | markdownify }}
@@ -30,26 +29,37 @@ layout: default
         {% endfor %}
         <hr />
         {% else %}
-        <h2 class="h2">Poster un commentaire</h2>
+        <h2 class="h2">{% t 'post.comments.title_empty' %}</h2>
         {% endif %}
-        <p>Vous pouvez envoyer un commentaire en utilisant le formulaire ci-dessous.</p>
-        <form method="POST" action="/submit-comment.php?return_to={{ page.url }}" class="visible">
-          <div class="entry">
-            <label for="name">{% t Nom : %}</label>
-            <input type="text" required="required" name="name" id="name" placeholder="{% t Votre nom %}" /><br />
+
+        <form method="POST" action="http://flipmail.co/api/{{ site.flipmail_api_key }}" class="visible">
+          <div class="success message form-sent" hidden id="message-sent">
+            <h2 class="h6">{% t 'post.comments.sent_title' %}</h2>
+            <p>{% t 'post.comments.sent_text' %}</p>
           </div>
-          <div class="entry">
-            <label for="from">{% t E-Mail : %}</label>
-            <input type="text" required="required" name="from" id="from" placeholder="{% t Votre adresse mail %}" /><br />
-          </div>
-          <div class="entry">
-            <label for="link">{% t Site Web : %}</label>
-            <input type="url" name="link" id="link" placeholder="{% t Votre site Web (facultatif) %}" /><br />
-          </div>
-          <label for="message">{% t Message : %}</label><br />
-          <textarea required="required" name="message" id="message" placeholder="{% t Entrez votre message ici %}"></textarea><br />
+          <input type="hidden" name="_after" value="{{ site.url }}{{ page.url}}#message-sent" />
+          <input type="hidden" name="_valid[post_id]" value="required" />
+          <input type="hidden" name="_valid[name]" value="required" />
+          <input type="hidden" name="_valid[from]" value="valid_email|required" />
+          <input type="hidden" name="_valid[message]" value="required" />
+          <input type="hidden" name="_subject" value="[Comment] {{ page.title }}" />
+          <input type="hidden" name="_replyto" value="%from" />
           <input type="hidden" name="post_id" value="{{ page.id }}" />
-          <input type="submit" value="{% t Envoyer ! %}" />
+          <input type="hidden" name="date" value="~" />
+          <div class="entry">
+            <label for="name">{% t 'form.name' %}</label>
+            <input type="text" required="required" name="name" id="name" placeholder="{% t 'form.name_placeholder' %}" /><br />
+          </div>
+          <div class="entry">
+            <label for="from">{% t 'form.email' %}</label>
+            <input type="text" required="required" name="from" id="from" placeholder="{% t 'form.email_placeholder' %}" /><br />
+          </div>
+          <div class="entry">
+            <label for="link">{% t 'form.url' %}</label>
+            <input type="url" name="link" id="link" placeholder="{% t 'form.url_placeholder' %}" /><br />
+          </div>
+          <label for="message">{% t 'form.message' %}</label><br />
+          <textarea required="required" name="message" id="message" placeholder="{% t 'form.message_placeholder' %}"></textarea><br />
+          <input type="submit" value="{% t 'form.send' %}" />
         </form>
       </aside>
-

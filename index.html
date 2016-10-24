@@ -2,16 +2,18 @@
 layout: page
 featured: 1
 languages:
-  eo:
-      title: Ĉefpaĝo
-  fr:
-      title: Accueil
-      show_translations: true
+  - fr
+  - eo
+fr:
+  title: Accueil
+eo:
+  title: Ĉefpaĝo
+  permalink: /
 ---
-        <ul class="posts">
-          {% assign posts = site.posts | where:"lang",page.lang %}
-          {% for post in posts limit:5 %}
-          <li itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
-          <time itemprop="datePublished" datetime="{{post.date | date_to_xmlschema}}">{{ post.date | date:'%d/%m/%Y' }}</time> &raquo; <a itemprop="url name" href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
+    <ul class="posts">
+      {% assign posts = site.posts | where:"language",page.language %}
+      {% for post in posts limit:5 %}
+      <li itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+      <time itemprop="datePublished" datetime="{{post.date | date_to_xmlschema}}">{{ post.date | tdate:'post.date_format' }}</time> &raquo; <a itemprop="url name" href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>

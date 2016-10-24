@@ -5,7 +5,7 @@ baseurl: ""
 url: "http://ctrlaltbksp.eu"
 
 # Language settings
-lang: fr
+default_language: eo
 timezone: Europe/Paris
 
 # Author vcard
@@ -15,11 +15,12 @@ author:
 
 # Build settings
 permalink: date
-markdown: KramdownPygments
+# markdown: KramdownPygments
+markdown: kramdown
 kramdown:
     input: GFM
-    header_offset: 2
-    use_coderay: false
+    header_offset: 1
+    enable_coderay: false
     hard_wrap: false
 exclude:
     - Makefile
@@ -27,13 +28,20 @@ exclude:
     - Gemfile.lock
 
 # Plugins settings
-gems: ['jekyll-assets']
-sass:
-    style: :compressed
-    sass_dir: css
+gems:
+  - jekyll-assets
+  - jekyll-language-plugin
+
+language_data: data.languages.%%
+language_includes_dir: _i18n
+languages: ['fr', 'eo']
 
 assets:
-    cache: true
-    js_compressor: uglifier
-    css_compressor: sass
+  compress:
+    js:  true
+    css: true
+  features:
+    liquid: false
+    digest: true
 
+flipmail_api_key: o3lzMgZ0dS6vdgL9qQNH

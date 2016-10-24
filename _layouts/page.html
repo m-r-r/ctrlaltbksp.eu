@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-
-			<section role="main" id="content" class="inner">
-				<header>
-					<h2>{{ page.title }}</h2>
-					{% include metadata.html for=page %}
-				</header>
-			{{ content }}
-			</section>
+      <main role="main" class="inner">
+	    <header>
+	      <h1 class="h2">{{ page.title }}</h1>
+			{% include metadata.html for=page %}
+		</header>
+		{{ content }}
+	  </main>
 

@@ -3,7 +3,7 @@
 layout: post
 title:  "Bonvenon !"
 date:   2014-08-25 13:14:22 +0200
-lang: eo
+language: eo
 ---
 
 Saluton,

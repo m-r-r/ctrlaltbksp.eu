@@ -3,7 +3,7 @@
 layout: post
 title: "Faire un injecteur de dépendances en PHP"
 date: 2014-09-14 20:10:15 +02:00
-lang: fr
+language: fr
 tags:
     - PHP
 published: true

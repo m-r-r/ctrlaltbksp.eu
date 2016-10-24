@@ -1,0 +1,55 @@
+---
+site:
+  title: "Ctrl + Alt + Bksp"
+  atom_feed: Flux ATOM
+  contact_me: Me contacter
+
+html_valid:
+  text: Ce site respecte les standards du Web.
+  link_title: Valider le code HTML.
+  img_alt: Logo du langage HTML
+
+skip_links:
+  content: Aller au contenu
+  menu: Aller au menu
+
+post:
+  published: "Publié le "
+  datetime_format: "%A %d %B %Y à %Hh%M"
+  date_format: "%d/%m/%Y"
+  lasts: Derniers articles
+  others: Autres articles
+  archive: Archives
+  comments:
+    title: "Commentaires"
+    title_empty: "Envoyer un commentaire"
+    text: "Vous pouvez envoyer un commentaire un utilisant le formulaire ci-dessous."
+    sent_title: "Commentaire envoyé"
+    sent_text: "Votre commentaire à bien été envoyé. Il sera affiché après avoir été validé par le propriétaire du site."
+    meta: "Écrit par %% le %%"
+    date_format: "%d %B %Y à %Hh%M"
+
+form:
+  subject: "Sujet :"
+  subject_placeholder: Sujet du message
+  name: "Nom :"
+  name_placeholder: Votre nom
+  email: "Adresse de courriel :"
+  email_placeholder: "Votre adresse de courriel"
+  url: "Site Web :"
+  url_placeholder: "Votre site Web (facultatif)"
+  message: "Message :"
+  message_placeholder: "Entrez votre message ici"
+  send: "Envoyer !"
+
+index:
+  title: Accueil
+
+feed:
+  und: 'Tous les articles'
+  eo: 'Articles en espéranto'
+  fr: 'Articles en français'
+
+contact:
+  sent_title: "Message envoyé"
+  sent_text: "Votre message à bien été envoyé. Vous recevez une réponse dès que possible."

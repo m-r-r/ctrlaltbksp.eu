@@ -4,28 +4,28 @@
         <div id="html5" class="widget">
           <p>
             <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
-              title="{% t Validation HTML5 %}"><img src="{% asset_path html5-valid.png %}" alt="{% t Logo HTML5 %}" /></a>
-            {% t Ce site respecte les standards du Web. %}
+              title="{% t 'html_valid.link_title' %}"><img src="{% asset_path html5-valid.png %}" alt="{% t 'html_valid.img_alt' %}" /></a>
+            {% t 'html_valid.text' %}
           </p>
         </div>
         <div id="translations" class="widget">
-          {% if page.lang != 'eo' %}
+          {% if page.language != 'eo' %}
           <p lang="eo">
-            <a href="{{ site.baseurl }}/index.eo.html">
+            <a href="{{ site.baseurl }}/index.html">
               <img alt="Esperanta flago" src="{% asset_path eo.png %}" role="presentation" />
             </a>
-            Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.baseurl }}/index.eo.html" hreflang="eo">en Esperanto.</a>
+            Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.baseurl }}/index.html" hreflang="eo">en Esperanto.</a>
           </p>
           {% else %}
           <p lang="fr">
-            <a href="{{ site.baseurl }}/index.html">
+            <a href="{{ site.baseurl }}/fr/index.html">
               <img alt="Drapeau français" src="{% asset_path fr.png %}" role="presentation" />
             </a>
-            Ce site existe aussi <a href="{{ site.baseurl }}/index.html" hreflang="fr">en Français.</a>
+            Ce site existe aussi <a href="{{ site.baseurl }}/fr/index.html" hreflang="fr">en Français.</a>
           </p>
           {% endif %}
         </div>
-        <p class="copyright">{% t Copyright %} &copy; <span itemprop="copyrightYear">2014</span> Mickaël RAYBAUD-ROIG</p>
+        <p class="copyright">Copyright &copy; <span itemprop="copyrightYear">2014</span>, <span itemprop="copyrightYear">2015</span>, <span itemprop="copyrightYear">2016</span> Mickaël RAYBAUD-ROIG</p>
         {% include autoreload.html %}
       </div>
     </footer>

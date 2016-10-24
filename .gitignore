@@ -2,3 +2,5 @@ _site
 .*.swp
 .jekyll-assets-cache/
 .sass-cache/
+.jekyll-metadata/
+.assets-cache/

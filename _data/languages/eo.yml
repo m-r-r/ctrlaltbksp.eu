@@ -1,0 +1,55 @@
+---
+site:
+  title: "Ctrl + Alt + Bksp"
+  atom_feed: ATOM-Fluo
+  contact_me: Kontakti min
+
+html_valid:
+  text: Ĉi tiu retpaĝaro sekvas la standardojn de la TTT.
+  link_title: Kontroli la HTML-kodon
+  img_alt: Logo de la Hiperteksta Marklingvo
+
+skip_links:
+  content: Iri al enhavo
+  menu: Iri al menuo
+
+post:
+  published: "Publikigita je "
+  datetime_format: "%Y-%m-%d %H:%M"
+  date_format: "%d<sup>a</sup> de %B %Y"
+  lasts: Lastaj eroj
+  others: Altaj eroj
+  archive: "Ar\u0125ivoj"
+  comments:
+    title: "Komentoj"
+    title_empty: "Komenti"
+    text: "Vi povas sendi komenton per la ĉi-malsupra formularo."
+    sent_title: "Komento sendita"
+    sent_text: "Via komento estas sendita. Ĝi estos afiŝita post la retejestro kontrolos ĝin."
+    meta: "Skribita de %% je %%"
+    date_format: "la %d<sup>a</sup> de %B %Y, %T"
+
+form:
+  subject: "Subjekto:"
+  subject_placeholder: La subjekto de via mesaĝo
+  name: "Nomo:"
+  name_placeholder: Via nomo
+  email: "Retpoŝtadreso:"
+  email_placeholder: "Via retpoŝtadreso"
+  url: "Retpaĝaro:"
+  url_placeholder: "Via retpaĝaro (nedeviga)"
+  message: "Mesaĝo:"
+  message_placeholder: "Tajpu vian messaĝon tie"
+  send: "Sendi!"
+
+index:
+  title: 'Ĉefpaĝo'
+
+feed:
+  und: 'Ĉiuj blogaĵoj'
+  eo: 'Esperantlingvaj blogaĵoj'
+  fr: 'Blogaĵoj en la franca'
+
+contact:
+  sent_title: "Mesaĝo sendita"
+  sent_text: "Via mesaĝo estas sendita. Vi ricevos respondon laŭeble plej baldaŭ."

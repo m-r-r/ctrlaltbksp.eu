@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default:site.lang }}">
+<html lang="{{ page.language }}">
   <head>
-    {% include head.html %}
+{% include head.html %}
   </head>
-<!--[if IE 6]><body class="{{ page.lang | default:site.lang }} class="ie6"><![endif]-->
+<!--[if IE 6]><body lang="{{ page.language }}" class="ie6"><![endif]-->
 <!--[if !IE 6]><!-->
   <body itemtype="http://schema.org/Blog" itemscope="itemscope">
 <!--<![endif]-->
-    {% include skip-links.html %}
-    {% include header.html %}
-    {{ content }}
-    {% include footer.html %}
+{% include skip-links.html %}
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
   </body>
 </html>

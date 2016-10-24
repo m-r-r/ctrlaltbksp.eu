@@ -3,7 +3,7 @@
 layout: post
 title:  "Encoder des URLs avec VIM"
 date: 2014-06-11 14:46:52
-lang: fr
+language: fr
 tags:
     - VIM
     - URL
