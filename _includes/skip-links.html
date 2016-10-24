@@ -1,7 +1,5 @@
     <div id="skip-links">
       <a href="#content">{% t 'skip_links.content' %}</a>
       <a href="#menu">{% t 'skip_links.menu' %}</a>
-      {% if page.lang != 'fr' %}{% capture feed_url %}/feed.{{ page.lang }}.xml{% endcapture %}
-      {% else %}{% assign feed_url = '/feed.xml' %}{% endif %}
-      <a href="{{ site.baseurl }}{{ feed_url }}">{% t 'site.atom_feed' %}</a>
+      <a href="{{ site.baseurl }}/{{ page.language }}/feed.xml">{% t 'site.atom_feed' %}</a>
     </div>
