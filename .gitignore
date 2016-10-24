@@ -3,4 +3,6 @@ _site
 .jekyll-assets-cache/
 .sass-cache/
 .jekyll-metadata/
-.assets-cache/
+.asset-cache/
+.bundle/
+vendor/
