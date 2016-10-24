@@ -5,6 +5,7 @@ language: fr
 featured: 3
 allow_robots: false
 sitemap: false
+published: false
 ---
 
 Voici quelques projets Open-Source auxquels j'ai participé:

@@ -13,6 +13,12 @@ author:
     full_name: Mickaël RAYBAUD-ROIG
     email: raybaudroigm@gmail.com
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      allow_robots: false
+
 # Build settings
 permalink: date
 # markdown: KramdownPygments
