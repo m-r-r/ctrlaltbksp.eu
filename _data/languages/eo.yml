@@ -3,6 +3,7 @@ site:
   title: "Ctrl + Alt + Bksp"
   atom_feed: ATOM-Fluo
   contact_me: Kontakti min
+  menu: Menuo
 
 html_valid:
   text: Ĉi tiu retpaĝaro sekvas la standardojn de la TTT.
@@ -14,9 +15,10 @@ skip_links:
   menu: Iri al menuo
 
 post:
-  published: "Publikigita je "
-  datetime_format: "%Y-%m-%d %H:%M"
-  date_format: "%d<sup>a</sup> de %B %Y"
+  published: "Publikigita je %%"
+  datetime_format: "la %d<sup>a</sup> de %B %Y, je %H:%M UTC%:z"
+  date_format: "la %d<sup>a</sup> de %B %Y"
+  date_format_short: "%Y-%m-%d"
   lasts: Lastaj eroj
   others: Altaj eroj
   archive: "Ar\u0125ivoj"
@@ -27,7 +29,7 @@ post:
     sent_title: "Komento sendita"
     sent_text: "Via komento estas sendita. Ĝi estos afiŝita post la retejestro kontrolos ĝin."
     meta: "Skribita de %% je %%"
-    date_format: "la %d<sup>a</sup> de %B %Y, %T"
+    date_format: "la %d<sup>a</sup> de %B %Y, je %H:%M UTC%:z"
 
 form:
   subject: "Subjekto:"

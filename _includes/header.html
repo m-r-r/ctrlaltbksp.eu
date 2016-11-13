@@ -1,7 +1,7 @@
-    <header id="banner">
+    <header id="banner" role="banner">
       <div class="inner">
         <h1 class="title" itemprop="name"><a itemprop="url" href="{{ site.baseurl }}/{% if page.language != site.default_language %}{{ page.language }}{% endif %}">{{ site.title }}</a></h1>
-        <nav id="menu">
+        <nav id="menu" aria-label="{% t 'site.menu' %}">
           <ul>
             {% assign pages = site.pages | where:'language',page.language |sort:'featured','last' %}
             {% for p in pages %}{% if p.featured %}

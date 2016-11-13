@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <link type="text/css" rel="stylesheet" href="{{ 'main.css' | asset_path }}" />
     <script type="text/javascript" charset="utf-8" src="{{ 'main.js' | asset_path }}" async="async"></script>
+    {% if jekyll.environment == "development" %}<script type="text/javascript" charset="utf-8" src="{{ 'autoreload.js' | asset_path }}" async="async"></script>{% endif %}
     <link rel="alternate" type="application/xml+atom" title="{% t 'site.atom_feed' %} ({%t 'feed.eo' feed.language %})"  href="{{ site.baseurl }}/eo/feed.xml" hreflang="eo" />
     <link rel="alternate" type="application/xml+atom" title="{% t 'site.atom_feed' %} ({%t 'feed.fr' feed.language %})"  href="{{ site.baseurl }}/fr/feed.xml" hreflang="fr" />
     {% for t in page.translations %}

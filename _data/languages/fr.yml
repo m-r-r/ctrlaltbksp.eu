@@ -3,6 +3,7 @@ site:
   title: "Ctrl + Alt + Bksp"
   atom_feed: Flux ATOM
   contact_me: Me contacter
+  menu: Menu
 
 html_valid:
   text: Ce site respecte les standards du Web.
@@ -14,9 +15,10 @@ skip_links:
   menu: Aller au menu
 
 post:
-  published: "Publié le "
-  datetime_format: "%A %d %B %Y à %Hh%M"
+  published: "Publié le %%"
+  datetime_format: "%A %d %B %Y à %Hh%M UTC%:z"
   date_format: "%d/%m/%Y"
+  date_format_short: "%d/%m/%Y"
   lasts: Derniers articles
   others: Autres articles
   archive: Archives
@@ -27,7 +29,7 @@ post:
     sent_title: "Commentaire envoyé"
     sent_text: "Votre commentaire à bien été envoyé. Il sera affiché après avoir été validé par le propriétaire du site."
     meta: "Écrit par %% le %%"
-    date_format: "%d %B %Y à %Hh%M"
+    date_format: "%A %d %B %Y à %Hh%M UTC%:z"
 
 form:
   subject: "Sujet :"
