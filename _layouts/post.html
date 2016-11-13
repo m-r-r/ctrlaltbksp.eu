@@ -2,15 +2,15 @@
 layout: default
 ---
 
-			<article class="inner post" id="content" role="main" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+			<main class="inner post" id="content" role="main" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
 				<header>
-					<h2 itemprop="name">{{ page.title }}</h2>
+					<h1 itemprop="name" class="page-title">{{ page.title }}</h1>
 					{% include metadata.html for=page %}
 				</header>
         <div itemprop="articleBody">
           {{ content }}
         </div>
-			</article>
+			</main>
 
       <aside class="inner comments">
         {% if page.comment_count > 0  %}

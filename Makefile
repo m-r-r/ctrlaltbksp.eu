@@ -6,3 +6,5 @@ serve:
 _site:	.
 	JEKYLL_ENV=production bundle exec jekyll build 
 
+pull-tinytypo:
+	git subtree pull --prefix _assets/stylesheets/tinytypo https://github.com/tetue/tinytypo.git master --squash
