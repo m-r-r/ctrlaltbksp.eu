@@ -49,5 +49,7 @@ assets:
     css: true
   features:
     liquid: false
+  sources:
+    - _assets/fonts
 
 flipmail_api_key: o3lzMgZ0dS6vdgL9qQNH
