@@ -1,10 +1,15 @@
     <footer id="footer">
+      {% include icons.svg %}
       <div class="inner">
         {% include author_vcard.html %}
         <div id="html5" class="widget">
           <p>
             <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
-              title="{% t 'html_valid.link_title' %}"><img src="{% asset_path html5-valid.png %}" alt="{% t 'html_valid.img_alt' %}" /></a>
+              title="{% t 'html_valid.link_title' %}">
+              <svg alt="{% t 'html_valid.img_alt' %}" class="icon" role="presentation">
+                <use xlink:href="#icon-html5" />
+              </svg>
+            </a>
             {% t 'html_valid.text' %}
           </p>
         </div>
@@ -12,14 +17,18 @@
           {% if page.language != 'eo' %}
           <p lang="eo">
             <a href="{{ site.baseurl }}/index.html">
-              <img alt="Esperanta flago" src="{% asset_path eo.png %}" role="presentation" />
+              <svg alt="Esperanta flago" class="icon" role="presentation">
+                <use xlink:href="#icon-eo" />
+              </svg>
             </a>
             Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.baseurl }}/index.html" hreflang="eo">en Esperanto.</a>
           </p>
           {% else %}
           <p lang="fr">
             <a href="{{ site.baseurl }}/fr/index.html">
-              <img alt="Drapeau français" src="{% asset_path fr.png %}" role="presentation" />
+              <svg alt="Drapeau français" class="icon" role="presentation">
+                <use xlink:href="#icon-fr" />
+              </svg>
             </a>
             Ce site existe aussi <a href="{{ site.baseurl }}/fr/index.html" hreflang="fr">en Français.</a>
           </p>
