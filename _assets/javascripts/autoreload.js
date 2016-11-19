@@ -19,7 +19,7 @@
 
   function check() {
     var r = new XMLHttpRequest();
-    var url = document.location.href + ((qs && qs !== '') ? '&' : '?') + 'r=' + Math.random();
+    var url = document.location.href;
     r.open('HEAD', url, true);
     r.onreadystatechange = function() {
       if (r.readyState == 4) {
