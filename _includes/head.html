@@ -13,8 +13,8 @@
     {% if jekyll.environment == "development" %}<script type="text/javascript" charset="utf-8" src="{{ 'autoreload.js' | asset_path }}" async="async"></script>{% endif %}
     <link rel="alternate" type="application/xml+atom" title="{% t 'site.atom_feed' %} ({%t 'feed.eo' feed.language %})"  href="{{ site.baseurl }}/eo/feed.xml" hreflang="eo" />
     <link rel="alternate" type="application/xml+atom" title="{% t 'site.atom_feed' %} ({%t 'feed.fr' feed.language %})"  href="{{ site.baseurl }}/fr/feed.xml" hreflang="fr" />
-    {% for t in page.translations %}
-    <link rel="alternate" type="text/html" title="{{ t.title }}" lang="{{ t.language }}" href="{{ site.baseurl }}{{ t.url }}" hreflang="{{ t.language }}" />{% endfor %}
+    {% if page.path == 'index.html' %}{% assign posts = site.posts | where:"language",page.language %}{% for p in posts  %}
+    <link rel="prefetch" href="{{ site.baseurl }}{{ p.url }}" />{% endfor %}{% endif %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
     <style type="text/css" media="all">
       [hidden] { display: none; }
