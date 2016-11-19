@@ -49,6 +49,5 @@ assets:
     css: true
   features:
     liquid: false
-    digest: true
 
 flipmail_api_key: o3lzMgZ0dS6vdgL9qQNH
