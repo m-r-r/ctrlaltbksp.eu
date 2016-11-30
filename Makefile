@@ -4,7 +4,7 @@ PORT ?= 8000
 all:	_site
 
 serve:
-	bundle exec jekyll serve --watch --host $(IP) --port $(PORT) --drafts
+	bundle exec jekyll serve --watch --host $(IP) --port $(PORT) $(JEKYLLOPTS)
 
 _site:	.
 	JEKYLL_ENV=production bundle exec jekyll build 
