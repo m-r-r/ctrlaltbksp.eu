@@ -15,13 +15,12 @@ allow_robots: false
 sitemap: false
 ---
 
-<form method="POST" action="http:////flipmail.co/api/{{ site.flipmail_api_key }}" class="visible">
+<form method="POST" action="http://flipmail.co/api/{{ site.flipmail_api_key }}" class="visible">
   <div class="success message form-sent" hidden id="message-sent">
-    <h2 class="h6">{% t 'post.comments.sent_title' %}</h2>
-    <p>{% t 'post.comments.sent_text' %}</p>
+    <h2 class="h6">{% t 'contact.sent_title' %}</h2>
+    <p>{% t 'contact.sent_text' %}</p>
   </div>
   <input type="hidden" name="_after" value="{{ site.url }}{{ page.url}}#message-sent" />
-  <input type="hidden" name="_valid[post_id]" value="required" />
   <input type="hidden" name="_valid[name]" value="required" />
   <input type="hidden" name="_valid[from]" value="valid_email|required" />
   <input type="hidden" name="_valid[message]" value="required" />
