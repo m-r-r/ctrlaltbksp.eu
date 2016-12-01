@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" overflow="hidden"><defs><symbol id="icon-eo" viewBox="0 0 96 64"><path fill="#fff" d="M0 0h32.3v32.3H0z"/><path fill="#090" d="M0 32h32V0h64v64H0zm9.3-7l6.5-20 6.6 20-17-12.4h21.2z"/></symbol><symbol id="icon-fr" viewBox="0 0 96 64"><path fill="#ed2939" d="M0 0h96v64H0V0z" class="path1"/><path fill="#fff" d="M0 0h64v64H0V0z"/><path fill="#002395" d="M0 0h32v64H0V0z"/></symbol><symbol id="icon-html5" viewBox="0 0 64 64"><title>HTML5 Badge, by W3C (http://www.w3.org) CC BY 3.0, via Wikimedia Commons</title><path fill="#e34f26" d="M9 57.5L3.6 0H60l-5 57.5L32 64z"/><path fill="#ef652a" d="M32 59l18.6-5L55 4.5H32z"/><path fill="#ebebeb" d="M32 26h-9.4l-.6-7.3h10v-7H14.2l.2 2L16 33h16zm0 18.4l-8-2-.5-5.8h-7l1 11 14.4 4z"/><path fill="#fff" d="M32 26v7h8.6l-1 9.3-7.7 2V52l14-4v-1.3L48 28l.3-2h-2zm0-14.3v7h17v-1.4l.5-3.7v-1.8z"/></symbol></defs></svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" hidden aria-hidden="true" overflow="hidden" role="presentation">
+ <defs>
+  <symbol id="icon-eo" viewBox="0 0 96 65">
+    <path fill="#fff" d="M0 0h32.3v32.3H0z"/>
+    <path fill="#090" d="M0 32h32V0h64v64H0zm9.3-7l6.5-20 6.6 20-17-12.4h21.2z"/>
+    <rect x="0.5" y="0.5" width="95.5" height="64" fill-opacity="0" stroke="silver" stroke-linecap="square" stroke-wisth="1" />
+  </symbol>
+  <symbol id="icon-fr" viewBox="0 0 96 65">
+    <path fill="#ed2939" d="M0 0h96v64H0V0z"/>
+    <path fill="#fff" d="M0 0h64v64H0V0z"/>
+    <path fill="#002395" d="M0 0h32v64H0V0z"/>
+    <rect x="0.5" y="0.5" width="95.5" height="64" fill-opacity="0" stroke="silver" stroke-linecap="square" stroke-wisth="1" />
+  </symbol>
+  <symbol id="icon-html5" viewBox="0 0 64 64">
+    <title>HTML5 Badge, by W3C (http://www.w3.org) CC BY 3.0, via Wikimedia Commons</title>
+    <path fill="#e34f26" d="M9 57.5L3.6 0H60l-5 57.5L32 64z"/>
+    <path fill="#ef652a" d="M32 59l18.6-5L55 4.5H32z"/>
+    <path fill="#ebebeb" d="M32 26h-9.4l-.6-7.3h10v-7H14.2l.2 2L16 33h16zm0 18.4l-8-2-.5-5.8h-7l1 11 14.4 4z"/>
+    <path fill="#fff" d="M32 26v7h8.6l-1 9.3-7.7 2V52l14-4v-1.3L48 28l.3-2h-2zm0-14.3v7h17v-1.4l.5-3.7v-1.8z"/>
+  </symbol>
+ </defs>
+</svg>
