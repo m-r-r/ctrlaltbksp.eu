@@ -6,7 +6,7 @@
           <p>
             <a href="http://validator.w3.org/check?uri={{ site.url | uri_escape }}{{ page.url | uri_escape }}"
               title="{% t 'html_valid.link_title' %}">
-              <svg alt="{% t 'html_valid.img_alt' %}" class="icon" role="presentation">
+              <svg alt="{% t 'html_valid.img_alt' %}" class="icon" role="presentation" version="1.1">
                 <use xlink:href="#icon-html5" />
               </svg>
             </a>
@@ -16,21 +16,21 @@
         <div id="translations" class="widget">
           {% if page.language != 'eo' %}
           <p lang="eo">
-            <a href="{{ site.baseurl }}/index.html">
-              <svg alt="Esperanta flago" class="icon" role="presentation">
+            <a href="{{ site.url }}">
+              <svg alt="Esperanta flago" class="icon" role="presentation" version="1.1">
                 <use xlink:href="#icon-eo" />
               </svg>
             </a>
-            Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.baseurl }}/index.html" hreflang="eo">en Esperanto.</a>
+            Tiu retpaĝaro ankaŭ haveblas <a href="{{ site.url }}" hreflang="eo">en Esperanto.</a>
           </p>
           {% else %}
           <p lang="fr">
-            <a href="{{ site.baseurl }}/fr/index.html">
-              <svg alt="Drapeau français" class="icon" role="presentation">
+            <a href="{{ site.url }}/fr">
+              <svg alt="Drapeau français" class="icon" role="presentation" version="1.1">
                 <use xlink:href="#icon-fr" />
               </svg>
             </a>
-            Ce site existe aussi <a href="{{ site.baseurl }}/fr/index.html" hreflang="fr">en Français.</a>
+            Ce site existe aussi <a href="{{ site.url }}/fr" hreflang="fr">en Français.</a>
           </p>
           {% endif %}
         </div>
