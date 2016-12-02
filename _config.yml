@@ -45,7 +45,7 @@ languages: ['fr', 'eo']
 
 assets:
   compress:
-    js:  true
+    js:  false
     css: true
   features:
     liquid: false

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mi skribas kunordigan servilon en Rust
-date: 2016-11-18 13:32:02+01:00
+date: 2016-12-02 13:05:59+01:00
 language: eo
 ---
 
@@ -10,29 +10,29 @@ memorajn erarojn kaj garantias sekurecon inter fadenoj</q>.
 
 Ekde la versio 0.8, mi tre interesiĝas pri tiu progamlingvo, kaj mi decidis uzi
 ĝin por skribi BitTorentan kunordigan servilon. Mi skribos artikolojn pri la
-progreso de tiu projekto en tiu blogo.
+progreso de la projekto en tiu blogo.
 
 ## Funkciado de BitTorrent
 
-Ĉi tiu artikolo estas la unuan kiun mi skribas pri tiu projekto, do mi klarigu
+Ĉi tiu artikolo estas la unua kiun mi skribas pri tiu projekto, do mi klarigu
 kio estas kunordiga servilo kaj kion ĝi faras.
 
 ### Samtavola ŝutado
 
 [BitTorrent][bt] estas samtavola dosierdisŝuta protokolo.  En BitTorenta reto,
-datumo estas dividita en pecojn, kiujn estas divastigitaj inter samtavolanoj:
+datumo estas dividita en pecoj, kiuj estas divastigitaj inter samtavolanoj:
 
 - Kiam samtavolano ekelŝutas torenton, ĝi konektiĝas al la kunordiga servilo
   por obteni la IP-adrsojn de aliaj samtavolanoj, kiuj estas disŝutante la saman
   torenton.
-- La samtavolano petas datumpecojn al samtavolanjo, kiuj jam alŝutis la dosierojn.
-  Tiel, ĝi alŝutas la dosierojn pecon post pecon el la aliaj samtavolanoj.
-- Regule, la samtavolano sendas informojn pri la progreso de ĝia elŝutado al 
-  la kunordiga servilo. 
+- La samtavolano petas datumpecojn al samtavolanoj, kiuj jam alŝutis la dosierojn.
+  Tiel, ĝi elŝutas la dosierojn pecon post pecon el la aliaj samtavolanoj.
+- Regule, la samtavolano sendas al la kunordiga servilo informojn pri la
+  progreso de sia elŝutado. 
 - Elŝutinte datumpecon, la samtavolano tuj povas elŝuti ĝin al aliaj samtavolanoj,
   kiuj petas ĝin.
 
-Tiel, la kunordiga servilo detanas la liston de samtavolantoj disŝutantaj
+Tiel, la kunordiga servilo detenas la liston de samtavolantoj disŝutantaj
 torentojn, kaj elbligas al la samtavolanoj obteni la IP-adresojn de unu la aliaj.
 
 Kunordigaj serviloj ne estas la ununura rimedo per kiu samtavolanoj povas trovi
@@ -57,16 +57,19 @@ La protokolo uzata inter la samtavolanoj kaj la kunordiga servilo estas relative
    samtavolanoj. Post la tempolimo estos pasinta, la samtavolano denove sendos
    anoncon, kaj ricevos novan liston.
 
-Tiu protokolo estas bazita je la HTTP-protokolo, sed bonŝance, Rust havas
-plurajn bibliotekojn, kiujn mi povos uzi por skribi HTTP-servilojn:
+Tiu protokolo estas detale priskribita en la [BEP003].
 
-- [Iron] estas plej fama HTTP-kadrsoftvaro skribita en Rust
+## Kion mi planas uzi
+
+Rust havas plurajn bibliotekojn, kiujn mi povos uzi por skribi HTTP-servilojn:
+
+- [Iron] estas relative fama HTTP-kadrsoftvaro.
 - [Hyper] estas biblioteko por skribi HTTP-servilojn, uzata de Iron.
 
 Mi pensas, ke mi uzos [Hyper], pro tio ke ĝi ebliĝas skribi nesinkronajn
-HTTP-servilojn, sed se ĝi estas tro malfacila uzebla, mi uzos [Iron] anstataŭ.
+HTTP-servilojn, sed se ĝi estas tro malfacila uzebla, ankaŭ eblos uzi [Iron].
 
-Por kodi datumon en la formato [Bencode], mi planas uzi
+Por kodi datumon en la formato [Bencode], mi uzos
 [la samnoman bibliotekon][crate-bencode]. 
 
 ---
@@ -85,7 +88,7 @@ En la venonta artikolo, mi komencos konstrui la projekton kaj skribi la kodon :-
 [PEX]: https://en.wikipedia.org/wiki/Peer_exchange
        "Peer exchange - Wikipedia"
 
-[BEP003]: http://www.bittorrent.org/beps/bep_0003.html
+[BEP003]: http://www.bittorrent.org/beps/bep_0003.html#trackers
           "The BitTorrent Protocol Specification"
 
 [iron]: https://crates.io/crates/iron

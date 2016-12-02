@@ -1,7 +1,8 @@
 (function() {
   "use strict";
   var qs = document.location.search;
-  if (!/autoreload=1/.test(qs)) {
+  var main = document.querySelector('main');
+  if (!main || !/autoreload=1/.test(qs)) {
     return;
   }
   var current_etag = qs.match(/etag=("?[a-zA-Z0-9_-]+)/);
@@ -16,25 +17,29 @@
       window.scrollTo(window.scrollX, scrolly);
     }, 10);
   }
+  
+  const parser = new DOMParser();
 
   function check() {
     var r = new XMLHttpRequest();
     var url = document.location.href;
-    r.open('HEAD', url, true);
+    r.open('GET', url, true);
     r.onreadystatechange = function() {
       if (r.readyState == 4) {
         var found_etag = r.getResponseHeader('Etag').replace(/^"|"$/g);
         //console.log('current_etag:', current_etag, 'found_etag:', found_etag);
-        if (current_etag === null) {
-          current_etag = found_etag;
+        if (current_etag === null || found_etag !== current_etag) {
+          try {
+            var doc = parser.parseFromString(r.responseText, 'text/html');
+            var docMain = doc.querySelector('main');
+            main.parentNode.replaceChild(docMain, main);
+            main = docMain;
+          } catch (err) {
+            console.error(err);
+            main = document.querySelector('main');
+          }
         }
-        else if (found_etag !== current_etag) {
-          document.location.search =
-            '?etag=' + encodeURIComponent(found_etag) +
-            '&scrolly=' + (window.scrollY || window.pageYOffset) +
-            '&autoreload=1';
-          return;
-        }
+        current_etag = found_etag;
         setTimeout(check, 1500);
       }
     };

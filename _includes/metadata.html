@@ -1,7 +1,7 @@
 {% assign node = include.for %}
 <p class="meta">
 {% if node.date %}
-{% capture date_published%}<time datetime="{{ node.date | date_to_xmlschema }}" itemprop="dateCreated">{{ node.date | tdate: 'post.datetime_format' }}</time>{% endcapture %}
+{% capture date_published%}<time datetime="{{ node.date | date_to_xmlschema }}" itemprop="datePublished">{{ node.date | tdate: 'post.datetime_format' }}</time>{% endcapture %}
 {% t 'post.published' : date_published %}.
 {% endif %}
 </p>
